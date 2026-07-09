@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>赵亮医生 · 口腔舒适化诊疗中心 | 无痛口腔治疗专家</title>
-<meta name="description" content="南方医科大学深圳口腔医院赵亮医生，专注口腔舒适化麻醉诊疗。笑气镇静、全麻下口腔治疗、儿童舒适化、特殊人群口腔诊疗，让看牙不再恐惧。">
-<meta name="keywords" content="口腔舒适化,无痛口腔,笑气镇静,全麻口腔治疗,儿童口腔,牙科恐惧,赵亮医生,深圳口腔医院">
+<title>赵亮医生 · 口腔舒适化诊疗中心 | 南方医科大学深圳口腔医院（坪山）</title>
+<meta name="description" content="南方医科大学深圳口腔医院（坪山）赵亮医生，专注口腔舒适化麻醉诊疗。笑气镇静、全麻下口腔治疗、儿童舒适化、特殊人群口腔诊疗，让看牙不再恐惧。">
+<meta name="keywords" content="口腔舒适化,无痛口腔,笑气镇静,全麻口腔治疗,儿童口腔,牙科恐惧,赵亮医生,南方医科大学深圳口腔医院,坪山">
 <meta property="og:title" content="赵亮医生 · 口腔舒适化诊疗中心">
-<meta property="og:description" content="专业口腔舒适化麻醉诊疗，让每一次口腔治疗都成为舒适体验。">
+<meta property="og:description" content="南方医科大学深圳口腔医院（坪山）专业口腔舒适化麻醉诊疗，让每一次口腔治疗都成为舒适体验。">
 <meta property="og:type" content="website">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
@@ -19,7 +19,6 @@
 html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden}
 body{font-family:'Noto Sans SC','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:var(--c-text);background:var(--c-bg);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{font-family:inherit}ul{list-style:none}strong{font-weight:600}
-
 :root{
   --c-primary:oklch(50% 0.15 250);--c-primary-l:oklch(68% 0.12 250);--c-primary-d:oklch(30% 0.12 250);--c-primary-dd:oklch(20% 0.10 250);
   --c-accent:oklch(58% 0.10 220);--c-accent-l:oklch(75% 0.08 220);
@@ -34,7 +33,11 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .container{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
 .section{padding:clamp(4rem,8vw,7rem) 0}
 
-/* ===== NAV ===== */
+/* 百度百科链接样式 */
+.baike{color:var(--c-primary);text-decoration:underline;text-decoration-color:oklch(50% 0.15 250 / .3);text-underline-offset:2px;transition:all .2s}
+.baike:hover{color:var(--c-primary-d);text-decoration-color:var(--c-primary)}
+
+/* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all .4s var(--ease)}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);display:flex;align-items:center;justify-content:space-between;height:72px}
 .nav.scrolled{background:oklch(98.5% 0.003 250 / .92);backdrop-filter:blur(24px) saturate(1.8);box-shadow:0 1px 0 var(--c-border)}
@@ -44,18 +47,26 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .nav-links{display:flex;gap:.25rem;align-items:center}
 .nav-links a{font-size:.875rem;font-weight:500;color:var(--c-text-2);padding:.5rem .85rem;border-radius:var(--r-sm);transition:all .25s var(--ease)}
 .nav-links a:hover{color:var(--c-primary-d);background:oklch(50% .15 250 / .06)}
-.nav-cta-btn{background:var(--c-primary) !important;color:oklch(98% .005 250) !important;padding:.55rem 1.4rem !important;border-radius:100px !important;font-weight:600 !important;font-size:.85rem !important;box-shadow:0 2px 8px oklch(50% .15 250 / .2)}
-.nav-cta-btn:hover{background:var(--c-primary-d) !important;transform:translateY(-1px);box-shadow:0 4px 16px oklch(50% .15 250 / .3) !important}
+.nav-cta-btn{background:var(--c-primary) !important;color:oklch(98% .005 250) !important;padding:.55rem 1.4rem !important;border-radius:100px !important;font-weight:600 !important;font-size:.85rem !important;box-shadow:0 2px 8px oklch(50% 0.15 250 / .2)}
+.nav-cta-btn:hover{background:var(--c-primary-d) !important;transform:translateY(-1px);box-shadow:0 4px 16px oklch(50% 0.15 250 / .3) !important}
 .nav-mobile{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:10}
 .nav-mobile span{display:block;width:20px;height:2px;background:var(--c-navy);margin:5px 0;transition:all .3s var(--ease);border-radius:2px}
 
-/* ===== HERO ===== */
+/* HOSPITAL BAR */
+.hospital-bar{background:var(--c-primary-dd);color:oklch(85% .03 250);padding:.45rem 0;font-size:.75rem;letter-spacing:.02em}
+.hospital-bar-inner{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.hospital-bar a{color:oklch(85% .03 250);transition:color .2s}
+.hospital-bar a:hover{color:oklch(95% .02 250)}
+.hospital-bar-left{display:flex;align-items:center;gap:.5rem}
+.hospital-bar-left svg{width:14px;height:14px;opacity:.7}
+
+/* HERO */
 .hero{min-height:100vh;min-height:100dvh;display:flex;align-items:center;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(165deg,oklch(98.5% .003 250) 0%,oklch(94% .03 250) 35%,oklch(88% .06 250) 70%,oklch(82% .08 250) 100%)}
 .hero-orbs{position:absolute;inset:0;pointer-events:none}
 .hero-orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.4;animation:orb-float 20s ease-in-out infinite}
-.hero-orb-1{width:400px;height:400px;background:oklch(70% .10 250);top:-10%;right:10%;animation-delay:0s}
+.hero-orb-1{width:400px;height:400px;background:oklch(70% .10 250);top:-10%;right:10%}
 .hero-orb-2{width:300px;height:300px;background:oklch(80% .08 220);bottom:5%;left:5%;animation-delay:-7s}
 .hero-orb-3{width:200px;height:200px;background:oklch(75% .06 280);top:40%;left:30%;animation-delay:-14s}
 @keyframes orb-float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,15px) scale(.95)}}
@@ -79,9 +90,9 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .btn-ghost:hover{border-color:var(--c-primary);background:oklch(50% .15 250 / .06)}
 .btn svg{width:18px;height:18px}
 
-/* Hero Visual */
+/* Hero Card */
 .hero-visual{display:flex;justify-content:center;align-items:center;perspective:1000px}
-.hero-card{background:oklch(99.2% .002 250 / .7);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);border:1px solid oklch(90% .015 250 / .4);border-radius:var(--r-lg);padding:clamp(1.5rem,3vw,2.2rem);width:100%;max-width:420px;box-shadow:var(--shadow-xl);transform:rotateY(-2deg) rotateX(1deg);transition:transform .6s var(--ease);position:relative}
+.hero-card{background:oklch(99.2% .002 250 / .7);backdrop-filter:blur(30px);border:1px solid oklch(90% .015 250 / .4);border-radius:var(--r-lg);padding:clamp(1.5rem,3vw,2.2rem);width:100%;max-width:420px;box-shadow:var(--shadow-xl);transform:rotateY(-2deg) rotateX(1deg);transition:transform .6s var(--ease);position:relative}
 .hero-card::before{content:'';position:absolute;top:-1px;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,var(--c-primary-l),transparent);border-radius:1px}
 .hero-card:hover{transform:rotateY(0) rotateX(0)}
 .hero-card-top{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid oklch(90% .015 250 / .3)}
@@ -106,19 +117,19 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .hero-float-item:nth-child(3){bottom:15%;left:15%;animation-delay:-4s}
 @keyframes float-item{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-15px) rotate(5deg)}}
 
-/* ===== SECTION HEADERS ===== */
+/* SEC HDR */
 .sec-hdr{margin-bottom:clamp(2.5rem,5vw,4rem)}
 .sec-label{font-size:.75rem;font-weight:700;color:var(--c-primary);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
 .sec-label::before{content:'';width:24px;height:2px;background:linear-gradient(90deg,var(--c-primary),var(--c-accent));border-radius:1px}
 .sec-title{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;color:var(--c-navy);line-height:1.2;letter-spacing:-.02em}
 .sec-desc{font-size:clamp(.95rem,1.5vw,1.05rem);color:var(--c-text-2);line-height:1.8;margin-top:.75rem;max-width:620px}
 
-/* ===== ABOUT ===== */
+/* ABOUT */
 .about{background:var(--c-bg);position:relative}
 .about::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--c-border),transparent)}
 .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2.5rem,5vw,5rem);align-items:start}
-.about-photo{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,oklch(93% .03 250) 0%,oklch(85% .06 250) 50%,oklch(78% .08 250) 100%);display:flex;align-items:center;justify-content:center}
-.about-photo-pattern{position:absolute;inset:0;opacity:.08;background-image:radial-gradient(circle at 2px 2px,oklch(30% .08 250) 1px,transparent 1px);background-size:20px 20px}
+.about-photo{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,oklch(93% .03 250),oklch(85% .06 250),oklch(78% .08 250));display:flex;align-items:center;justify-content:center}
+.about-photo-pattern{position:absolute;inset:0;opacity:.06;background-image:radial-gradient(circle at 2px 2px,oklch(30% .08 250) 1px,transparent 1px);background-size:20px 20px}
 .about-photo-overlay{position:absolute;inset:0;background:linear-gradient(to top,oklch(12% .04 250 / .7) 0%,oklch(12% .04 250 / .2) 40%,transparent 70%);z-index:1}
 .about-photo-content{position:relative;z-index:2;text-align:center;padding:2rem}
 .about-photo-icon{margin:0 auto 1rem}
@@ -126,6 +137,8 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .about-photo-content .photo-hint{font-size:.72rem;opacity:.4;margin-top:.5rem}
 .about-info-head{margin-bottom:1.5rem}
 .about-info-head h2{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2rem);font-weight:900;color:var(--c-navy);margin-bottom:.3rem}
+.about-hospital{display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem;font-size:.82rem;color:var(--c-primary);font-weight:500}
+.about-hospital svg{width:16px;height:16px;flex-shrink:0}
 .about-role{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
 .about-role-tag{background:oklch(50% .15 250 / .08);color:var(--c-primary-d);padding:.25rem .75rem;border-radius:100px;font-size:.78rem;font-weight:600;border:1px solid oklch(50% .15 250 / .1)}
 .about-text{color:var(--c-text-2);line-height:1.9;margin-bottom:1rem;font-size:.95rem}
@@ -142,7 +155,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .award-yr{background:linear-gradient(135deg,oklch(50% .15 250 / .1),oklch(50% .15 250 / .05));color:var(--c-primary-d);padding:.15rem .55rem;border-radius:4px;font-size:.68rem;font-weight:700;white-space:nowrap;flex-shrink:0;margin-top:.15rem}
 .award-txt{font-size:.82rem;color:var(--c-text);line-height:1.55}
 
-/* ===== METHODS ===== */
+/* METHODS */
 .methods{background:var(--c-bg-warm);position:relative}
 .methods::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--c-border),transparent)}
 .methods-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
@@ -152,8 +165,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .m-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c-primary),var(--c-accent),var(--c-primary-l));opacity:0;transition:opacity .3s}
 .m-card::after{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,oklch(50% .15 250 / .03) 0%,transparent 70%);transition:opacity .4s;opacity:0}
 .m-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:oklch(50% .15 250 / .15)}
-.m-card:hover::before{opacity:1}
-.m-card:hover::after{opacity:1}
+.m-card:hover::before{opacity:1}.m-card:hover::after{opacity:1}
 .m-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.15rem;position:relative}
 .m-icon-1{background:linear-gradient(135deg,oklch(90% .06 250),oklch(85% .08 250));color:oklch(45% .15 250)}
 .m-icon-2{background:linear-gradient(135deg,oklch(90% .06 280),oklch(85% .08 280));color:oklch(45% .12 280)}
@@ -168,7 +180,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .m-tag{background:oklch(95% .01 250);color:var(--c-text-2);padding:.18rem .55rem;border-radius:4px;font-size:.7rem;font-weight:500;transition:all .2s}
 .m-tag:hover{background:oklch(50% .15 250 / .08);color:var(--c-primary-d)}
 
-/* ===== DETAIL SECTIONS ===== */
+/* DETAIL */
 .detail{padding:clamp(3.5rem,7vw,6rem) 0}
 .detail:nth-child(even){background:var(--c-bg)}
 .detail-inner{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
@@ -189,7 +201,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .detail-li svg{width:18px;height:18px;color:var(--c-success);flex-shrink:0;margin-top:3px}
 .detail-li strong{font-weight:600;color:var(--c-navy)}
 
-/* ===== RESEARCH ===== */
+/* RESEARCH */
 .research{background:var(--c-bg)}
 .timeline{position:relative;padding-left:2.5rem}
 .timeline::before{content:'';position:absolute;left:5px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--c-primary),var(--c-accent),oklch(85% .04 250))}
@@ -202,17 +214,17 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .tl-item[data-status="active"] .tl-year{color:var(--c-accent)}
 .tl-item h4{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--c-navy);margin-bottom:.35rem;line-height:1.5}
 .tl-item p{font-size:.85rem;color:var(--c-text-2);line-height:1.75}
-.tl-badge{display:inline-block;padding:.15rem .6rem;border-radius:4px;font-size:.68rem;font-weight:700;margin-top:.4rem;letter-spacing:.02em}
+.tl-badge{display:inline-block;padding:.15rem .6rem;border-radius:4px;font-size:.68rem;font-weight:700;margin-top:.4rem}
 .tl-badge-done{background:oklch(88% .06 145);color:oklch(35% .08 145)}
 .tl-badge-active{background:oklch(88% .06 250);color:oklch(35% .10 250)}
 
-/* ===== PUBLICATIONS ===== */
+/* PUBS */
 .pubs{background:var(--c-bg-warm)}
 .pub-tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
 .pub-tab{padding:.45rem 1rem;border-radius:100px;font-size:.8rem;font-weight:600;cursor:pointer;border:1.5px solid var(--c-border);background:transparent;color:var(--c-text-2);transition:all .25s var(--ease)}
 .pub-tab:hover,.pub-tab.active{background:var(--c-primary);color:oklch(98% .005 250);border-color:var(--c-primary)}
 .pub-list{display:flex;flex-direction:column;gap:.75rem}
-.pub-item{background:var(--c-surface);border:1px solid var(--c-border-l);border-radius:var(--r-sm);padding:1.15rem 1.4rem;transition:all .3s var(--ease);cursor:default}
+.pub-item{background:var(--c-surface);border:1px solid var(--c-border-l);border-radius:var(--r-sm);padding:1.15rem 1.4rem;transition:all .3s var(--ease)}
 .pub-item:hover{border-color:oklch(50% .15 250 / .2);box-shadow:var(--shadow-sm)}
 .pub-type{display:inline-block;padding:.12rem .5rem;border-radius:3px;font-size:.65rem;font-weight:700;margin-bottom:.4rem;letter-spacing:.05em;text-transform:uppercase}
 .pub-type-j{background:oklch(88% .06 250);color:oklch(30% .10 250)}
@@ -222,7 +234,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .pub-meta{font-size:.76rem;color:var(--c-text-3);line-height:1.5}
 .pub-highlight{background:oklch(50% .15 250 / .04);border-color:oklch(50% .15 250 / .15)}
 
-/* ===== NEWS ===== */
+/* NEWS */
 .news{background:var(--c-bg)}
 .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 @media(max-width:900px){.news-grid{grid-template-columns:repeat(2,1fr)}}
@@ -234,8 +246,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .news-img-bg-a{background:linear-gradient(135deg,oklch(93% .03 250),oklch(85% .06 250),oklch(78% .08 250))}
 .news-img-bg-b{background:linear-gradient(135deg,oklch(93% .03 280),oklch(85% .06 280),oklch(78% .08 280))}
 .news-img-bg-c{background:linear-gradient(135deg,oklch(93% .03 220),oklch(85% .06 220),oklch(78% .08 220))}
-.news-img-icon{opacity:.12;color:var(--c-navy)}
-.news-img-icon svg{width:56px;height:56px}
+.news-img-icon{opacity:.12;color:var(--c-navy)}.news-img-icon svg{width:56px;height:56px}
 .news-img-pattern{position:absolute;inset:0;opacity:.04;background-image:radial-gradient(circle at 2px 2px,currentColor 1px,transparent 1px);background-size:14px 14px}
 .news-date{position:absolute;top:.75rem;left:.75rem;background:oklch(99% .003 250 / .9);backdrop-filter:blur(8px);padding:.3rem .65rem;border-radius:var(--r-sm);font-size:.68rem;font-weight:600;color:var(--c-text-2);box-shadow:var(--shadow-sm)}
 .news-body{padding:1.25rem;flex:1;display:flex;flex-direction:column}
@@ -243,7 +254,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .news-body h3{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--c-navy);margin-bottom:.5rem;line-height:1.5}
 .news-body p{font-size:.82rem;color:var(--c-text-2);line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
 
-/* ===== FAQ ===== */
+/* FAQ */
 .faq{background:var(--c-bg-warm)}
 .faq-list{max-width:780px;display:flex;flex-direction:column;gap:.6rem}
 .faq-item{background:var(--c-surface);border:1px solid var(--c-border-l);border-radius:var(--r-sm);overflow:hidden;transition:border-color .3s}
@@ -257,7 +268,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .faq-a-inner{overflow:hidden}
 .faq-a-text{padding:0 1.4rem 1.25rem;font-size:.88rem;color:var(--c-text-2);line-height:1.85}
 
-/* ===== WECHAT ===== */
+/* WECHAT */
 .wechat{background:linear-gradient(160deg,var(--c-primary-dd) 0%,var(--c-primary-d) 40%,var(--c-primary) 100%);color:oklch(95% .005 250);padding:clamp(4rem,8vw,6rem) 0;position:relative;overflow:hidden}
 .wechat::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fff' fill-opacity='.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
 .wechat-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
@@ -275,7 +286,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .wechat-qr-wrap p{font-size:.78rem;color:var(--c-text-3);font-weight:500}
 .wechat-qr-label{font-size:.85rem;font-weight:700;color:var(--c-navy);margin-bottom:.5rem}
 
-/* ===== CTA ===== */
+/* CTA */
 .cta{background:oklch(96% .006 250);text-align:center;padding:clamp(4rem,8vw,7rem) 2rem;position:relative}
 .cta .sec-title{font-size:clamp(1.8rem,3.5vw,2.6rem)}
 .cta .sec-desc{max-width:580px;margin:1rem auto 0}
@@ -285,7 +296,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .btn-white-stroke{background:oklch(98% .003 250 / .5);color:var(--c-primary-d);border:1.5px solid oklch(50% .15 250 / .25);backdrop-filter:blur(8px)}
 .btn-white-stroke:hover{border-color:var(--c-primary);background:oklch(50% .15 250 / .06)}
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 .footer{background:var(--c-navy);color:oklch(72% .01 250);padding:clamp(3rem,6vw,5rem) 0 0}
 .footer-grid{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:clamp(2rem,4vw,3.5rem);padding-bottom:3rem}
 .footer-brand h3{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:oklch(92% .005 250);margin-bottom:.6rem}
@@ -296,40 +307,32 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .footer-col a:hover{color:oklch(90% .01 250)}
 .footer-bottom{max-width:1200px;margin:0 auto;padding:1.25rem clamp(1.25rem,4vw,2.5rem);border-top:1px solid oklch(25% .01 250);display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:oklch(48% .01 250);flex-wrap:wrap;gap:.5rem}
 
-/* ===== BTT ===== */
+/* BTT */
 .btt{position:fixed;bottom:2rem;right:2rem;width:42px;height:42px;border-radius:50%;background:var(--c-primary);color:oklch(98% .005 250);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(16px);transition:all .35s var(--ease);z-index:90;box-shadow:var(--shadow-md)}
-.btt.show{opacity:1;transform:translateY(0)}
-.btt:hover{background:var(--c-primary-d);transform:translateY(-2px)}
-.btt svg{width:18px;height:18px}
+.btt.show{opacity:1;transform:translateY(0)}.btt:hover{background:var(--c-primary-d);transform:translateY(-2px)}.btt svg{width:18px;height:18px}
 
-/* ===== ANIM ===== */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
-.reveal.in{opacity:1;transform:translateY(0)}
+/* ANIM */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s var(--ease),transform .65s var(--ease)}.reveal.in{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}.d6{transition-delay:.48s}
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:1024px){
-  .hero-inner{grid-template-columns:1fr;gap:2.5rem}.hero-visual{order:-1}.hero-card{max-width:380px;margin:0 auto}
-  .about-grid{grid-template-columns:1fr}.about-photo{max-height:350px}
-  .detail-grid,.detail-grid.rev{grid-template-columns:1fr;gap:2rem;direction:ltr}
-  .wechat-inner{grid-template-columns:1fr;text-align:center}.wechat-qr-wrap{margin:0 auto}.wechat-content .wechat-features{align-items:center}
-  .footer-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:768px){
-  .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:oklch(98.5% .003 250 / .98);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:.5rem;z-index:999}
-  .nav-links.open{display:flex}.nav-links a{font-size:1.1rem;padding:.75rem 1.5rem}
-  .nav-mobile{display:block;z-index:1001}
-  .cred-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}
-}
-@media(max-width:480px){
-  .hero-title{font-size:2.2rem}.hero-card{padding:1.25rem}.hero-stats{gap:.25rem}.hero-stat-val{font-size:1.2rem}
-  .m-card{padding:1.25rem}.pub-item{padding:1rem}
-  .faq-q{padding:1rem 1.15rem;font-size:.88rem}.faq-a-text{padding:0 1.15rem 1rem}
-  .wechat-qr-wrap img{width:160px;height:160px}
-}
+/* RESPONSIVE */
+@media(max-width:1024px){.hero-inner{grid-template-columns:1fr;gap:2.5rem}.hero-visual{order:-1}.hero-card{max-width:380px;margin:0 auto}.about-grid{grid-template-columns:1fr}.about-photo{max-height:350px}.detail-grid,.detail-grid.rev{grid-template-columns:1fr;gap:2rem;direction:ltr}.wechat-inner{grid-template-columns:1fr;text-align:center}.wechat-qr-wrap{margin:0 auto}.wechat-content .wechat-features{align-items:center}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:oklch(98.5% .003 250 / .98);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:.5rem;z-index:999}.nav-links.open{display:flex}.nav-links a{font-size:1.1rem;padding:.75rem 1.5rem}.nav-mobile{display:block;z-index:1001}.cred-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.hospital-bar-inner{justify-content:center;text-align:center}}
+@media(max-width:480px){.hero-title{font-size:2.2rem}.hero-card{padding:1.25rem}.hero-stats{gap:.25rem}.hero-stat-val{font-size:1.2rem}.m-card{padding:1.25rem}.pub-item{padding:1rem}.faq-q{padding:1rem 1.15rem;font-size:.88rem}.faq-a-text{padding:0 1.15rem 1rem}.wechat-qr-wrap img{width:160px;height:160px}}
 </style>
 </head>
 <body>
+
+<!-- HOSPITAL BAR -->
+<div class="hospital-bar">
+  <div class="hospital-bar-inner">
+    <div class="hospital-bar-left">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>南方医科大学深圳口腔医院（坪山）</span>
+    </div>
+    <a href="https://www.smuszsh.com/" target="_blank" rel="noopener">医院官网 ↗</a>
+  </div>
+</div>
 
 <!-- NAV -->
 <nav class="nav" id="nav">
@@ -356,7 +359,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
     <div class="hero-content">
       <div class="hero-badge"><span class="hero-badge-dot"></span>专业 · 舒适 · 安全</div>
       <h1 class="hero-title">让每一次口腔治疗<br>都成为<em>舒适体验</em></h1>
-      <p class="hero-desc">以精准麻醉技术为核心，融合多学科协作理念，为儿童、特殊人群及牙科畏惧症患者提供全程无痛、安全舒适的口腔诊疗服务。</p>
+      <p class="hero-desc">以精准麻醉技术为核心，融合多学科协作理念，为儿童、特殊人群及<a href="https://baike.baidu.com/item/%E7%89%99%E5%8C%BB%E6%81%90%E6%83%A7%E7%97%87/7194208" target="_blank" rel="noopener" class="baike">牙科畏惧症</a>患者提供全程无痛、安全舒适的口腔诊疗服务。</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>预约咨询</a>
         <a href="#methods" class="btn btn-ghost">了解舒适化方案<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg></a>
@@ -379,7 +382,10 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
           <div class="hero-stat"><div class="hero-stat-val" data-count="3">0</div><div class="hero-stat-lbl">主持课题</div></div>
         </div>
         <div class="hero-card-tags">
-          <span class="hero-tag">笑气镇静</span><span class="hero-tag">全身麻醉</span><span class="hero-tag">儿童舒适化</span><span class="hero-tag">特殊人群</span>
+          <a href="https://baike.baidu.com/item/%E4%B8%80%E6%B0%A7%E5%8C%96%E4%BA%8C%E6%B0%AE" target="_blank" rel="noopener" class="hero-tag">笑气镇静</a>
+          <a href="https://baike.baidu.com/item/%E5%85%A8%E8%BA%AB%E9%BA%BB%E9%86%89" target="_blank" rel="noopener" class="hero-tag">全身麻醉</a>
+          <span class="hero-tag">儿童舒适化</span>
+          <span class="hero-tag">特殊人群</span>
         </div>
       </div>
     </div>
@@ -396,8 +402,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
         <div class="about-photo-content">
           <div class="about-photo-icon">
             <svg width="100" height="120" viewBox="0 0 100 120" fill="none" stroke="oklch(80% .06 250)" stroke-width="1.5">
-              <circle cx="50" cy="35" r="20" opacity=".4"/>
-              <path d="M20 95c0-16.569 13.431-30 30-30s30 13.431 30 30" opacity=".4"/>
+              <circle cx="50" cy="35" r="20" opacity=".4"/><path d="M20 95c0-16.569 13.431-30 30-30s30 13.431 30 30" opacity=".4"/>
               <rect x="35" y="70" width="30" height="8" rx="4" opacity=".2"/>
               <path d="M42 50c0 0 3 8 8 8s8-8 8-8" opacity=".3"/>
               <circle cx="44" cy="32" r="2" fill="oklch(80% .06 250)" opacity=".3"/>
@@ -411,11 +416,15 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
       <div class="about-info reveal d2">
         <div class="about-info-head">
           <h2>赵亮 医生</h2>
+          <div class="about-hospital">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <a href="https://www.smuszsh.com/" target="_blank" rel="noopener">南方医科大学深圳口腔医院（坪山）</a>
+          </div>
           <div class="about-role">
             <span class="about-role-tag">麻醉科主治医师</span><span class="about-role-tag">高校教师资格</span><span class="about-role-tag">毒麻药品处方权</span>
           </div>
         </div>
-        <p class="about-text">南方医科大学深圳口腔医院（坪山）麻醉科主治医师，长期专注于口腔舒适化麻醉的临床实践与科学研究。熟练掌握笑气-氧气吸入镇静、全身麻醉、静脉镇静等多种舒适化技术，尤其在儿童口腔舒适化诊疗、特殊人群口腔麻醉管理方面积累了丰富经验。</p>
+        <p class="about-text">南方医科大学深圳口腔医院（坪山）麻醉科主治医师，长期专注于<a href="https://baike.baidu.com/item/%E5%8F%A3%E8%85%94%E8%88%92%E9%80%82%E5%8C%96" target="_blank" rel="noopener" class="baike">口腔舒适化</a>麻醉的临床实践与科学研究。熟练掌握<a href="https://baike.baidu.com/item/%E4%B8%80%E6%B0%A7%E5%8C%96%E4%BA%8C%E6%B0%AE" target="_blank" rel="noopener" class="baike">笑气-氧气吸入镇静</a>、<a href="https://baike.baidu.com/item/%E5%85%A8%E8%BA%AB%E9%BA%BB%E9%86%89" target="_blank" rel="noopener" class="baike">全身麻醉</a>等多种舒适化技术，尤其在儿童口腔舒适化诊疗、特殊人群口腔麻醉管理方面积累了丰富经验。</p>
         <p class="about-text">秉持"以患者为中心"的理念，致力于让每一位患者——无论是对牙科治疗充满恐惧的儿童，还是需要特殊照护的群体——都能在安全、舒适、无痛的环境中完成口腔诊疗。</p>
         <div class="cred-grid">
           <div class="cred-item"><span class="cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>执业医师证（麻醉）</div>
@@ -447,14 +456,14 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
     <div class="methods-grid">
       <div class="m-card reveal d1">
         <div class="m-icon m-icon-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg></div>
-        <h3>笑气-氧气吸入镇静</h3>
-        <p>吸入20%-40%浓度的笑气与氧气混合气体，在保持清醒的同时达到深度放松。起效快、恢复快，治疗结束后数分钟即可正常活动。</p>
+        <h3><a href="https://baike.baidu.com/item/%E4%B8%80%E6%B0%A7%E5%8C%96%E4%BA%8C%E6%B0%AE" target="_blank" rel="noopener" class="baike">笑气-氧气吸入镇静</a></h3>
+        <p>吸入20%-40%浓度的<a href="https://baike.baidu.com/item/%E4%B8%80%E6%B0%A7%E5%8C%96%E4%BA%8C%E6%B0%AE" target="_blank" rel="noopener" class="baike">笑气</a>与氧气混合气体，在保持清醒的同时达到深度放松。起效快、恢复快，治疗结束后数分钟即可正常活动。</p>
         <div class="m-tags"><span class="m-tag">起效迅速</span><span class="m-tag">可控性强</span><span class="m-tag">快速恢复</span><span class="m-tag">适用范围广</span></div>
       </div>
       <div class="m-card reveal d2">
         <div class="m-icon m-icon-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-        <h3>全身麻醉</h3>
-        <p>适用于复杂口腔手术、低龄儿童、特殊人群及重度牙科畏惧症患者。专业麻醉团队全程监护，确保无意识、无痛状态下安全完成治疗。</p>
+        <h3><a href="https://baike.baidu.com/item/%E5%85%A8%E8%BA%AB%E9%BA%BB%E9%86%89" target="_blank" rel="noopener" class="baike">全身麻醉</a></h3>
+        <p>适用于复杂口腔手术、低龄儿童、特殊人群及重度<a href="https://baike.baidu.com/item/%E7%89%99%E5%8C%BB%E6%81%90%E6%83%A7%E7%97%87/7194208" target="_blank" rel="noopener" class="baike">牙科畏惧症</a>患者。专业麻醉团队全程监护，确保无意识、无痛状态下安全完成治疗。</p>
         <div class="m-tags"><span class="m-tag">完全无痛</span><span class="m-tag">全程监护</span><span class="m-tag">复杂手术</span><span class="m-tag">特殊人群首选</span></div>
       </div>
       <div class="m-card reveal d3">
@@ -493,22 +502,19 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
         <div class="detail-vis-pattern"></div>
         <div class="detail-vis-center">
           <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2">
-            <circle cx="60" cy="60" r="45" stroke-dasharray="6 4" opacity=".3"/>
-            <circle cx="60" cy="60" r="30" opacity=".2"/>
+            <circle cx="60" cy="60" r="45" stroke-dasharray="6 4" opacity=".3"/><circle cx="60" cy="60" r="30" opacity=".2"/>
             <text x="60" y="55" text-anchor="middle" font-family="serif" font-size="16" font-weight="bold" fill="currentColor" opacity=".3" stroke="none">N₂O</text>
             <text x="60" y="72" text-anchor="middle" font-size="8" fill="currentColor" opacity=".2" stroke="none">O₂</text>
-            <circle cx="35" cy="40" r="3" fill="currentColor" opacity=".1"/>
-            <circle cx="85" cy="45" r="2" fill="currentColor" opacity=".1"/>
+            <circle cx="35" cy="40" r="3" fill="currentColor" opacity=".1"/><circle cx="85" cy="45" r="2" fill="currentColor" opacity=".1"/>
             <circle cx="45" cy="80" r="2.5" fill="currentColor" opacity=".08"/>
-            <path d="M30 60c5-10 15-15 25-10s15 15 10 25" opacity=".1"/>
-            <path d="M90 55c-5 8-15 12-25 8s-12-14-8-22" opacity=".1"/>
+            <path d="M30 60c5-10 15-15 25-10s15 15 10 25" opacity=".1"/><path d="M90 55c-5 8-15 12-25 8s-12-14-8-22" opacity=".1"/>
           </svg>
           <div class="detail-vis-label">笑气 · 氧气 · 镇静</div>
         </div>
       </div>
       <div class="detail-content reveal d2">
-        <h3>笑气-氧气吸入镇静详解</h3>
-        <p>笑气（一氧化二氮，N₂O）是目前口腔门诊应用最广泛的吸入镇静方式。患者通过面罩吸入20%-40%浓度的笑气与氧气混合气体，在保持清醒的同时达到深度放松状态。</p>
+        <h3><a href="https://baike.baidu.com/item/%E4%B8%80%E6%B0%A7%E5%8C%96%E4%BA%8C%E6%B0%AE" target="_blank" rel="noopener" class="baike">笑气-氧气吸入镇静</a>详解</h3>
+        <p>笑气（<a href="https://baike.baidu.com/item/%E4%B8%80%E6%B0%A7%E5%8C%96%E4%BA%8C%E6%B0%AE" target="_blank" rel="noopener" class="baike">一氧化二氮</a>，N₂O）是目前口腔门诊应用最广泛的吸入镇静方式。患者通过面罩吸入20%-40%浓度的笑气与氧气混合气体，在保持清醒的同时达到深度放松状态。</p>
         <p>我院已完成近<strong>600例</strong>笑气-氧气吸入镇静下的口腔门诊手术，涵盖儿童龋齿治疗、成人拔牙、牙周手术等多种场景。</p>
         <ul class="detail-list">
           <li class="detail-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>起效快：</strong>吸入后3-5分钟即可产生镇静效果</span></li>
@@ -534,8 +540,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
             <circle cx="80" cy="75" r="8" opacity=".2"/>
             <path d="M77 75l3 3 4-5" opacity=".3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M35 25v-5h50v5" opacity=".15"/>
-            <circle cx="45" cy="22" r="2" fill="currentColor" opacity=".1"/>
-            <circle cx="55" cy="22" r="2" fill="currentColor" opacity=".1"/>
+            <circle cx="45" cy="22" r="2" fill="currentColor" opacity=".1"/><circle cx="55" cy="22" r="2" fill="currentColor" opacity=".1"/>
             <path d="M30 95h60" opacity=".1" stroke-dasharray="4 3"/>
             <text x="60" y="108" text-anchor="middle" font-size="7" fill="currentColor" opacity=".15" stroke="none">GENERAL ANESTHESIA</text>
           </svg>
@@ -543,13 +548,13 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
         </div>
       </div>
       <div class="detail-content reveal d2">
-        <h3>全身麻醉下口腔治疗</h3>
-        <p>对于无法配合常规治疗的患者，全身麻醉提供了安全、高效的解决方案。我院已成功完成<strong>588例</strong>全麻下口腔治疗，涵盖儿童龋病综合治疗、复杂阻生牙拔除、颌面外科手术等。</p>
-        <p>特别在特殊人群管理方面积累了独到经验，包括天使综合征、癫痫、双相情感障碍、重度牙科畏惧症等患者。</p>
+        <h3><a href="https://baike.baidu.com/item/%E5%85%A8%E8%BA%AB%E9%BA%BB%E9%86%89" target="_blank" rel="noopener" class="baike">全身麻醉</a>下口腔治疗</h3>
+        <p>对于无法配合常规治疗的患者，<a href="https://baike.baidu.com/item/%E5%85%A8%E8%BA%AB%E9%BA%BB%E9%86%89" target="_blank" rel="noopener" class="baike">全身麻醉</a>提供了安全、高效的解决方案。我院已成功完成<strong>588例</strong>全麻下口腔治疗，涵盖儿童龋病综合治疗、复杂阻生牙拔除、颌面外科手术等。</p>
+        <p>特别在特殊人群管理方面积累了独到经验，包括<a href="https://baike.baidu.com/item/%E5%A4%A9%E4%BD%BF%E7%BB%BC%E5%90%88%E5%BE%81" target="_blank" rel="noopener" class="baike">天使综合征</a>、<a href="https://baike.baidu.com/item/%E7%99%AB%E7%97%AB" target="_blank" rel="noopener" class="baike">癫痫</a>、<a href="https://baike.baidu.com/item/%E5%8F%8C%E7%9B%B8%E9%9A%9C%E7%A2%8D" target="_blank" rel="noopener" class="baike">双相情感障碍</a>、重度<a href="https://baike.baidu.com/item/%E7%89%99%E5%8C%BB%E6%81%90%E6%83%A7%E7%97%87/7194208" target="_blank" rel="noopener" class="baike">牙科畏惧症</a>等患者。</p>
         <ul class="detail-list">
           <li class="detail-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>一站式治疗：</strong>一次麻醉完成所有口腔治疗，减少就诊次数</span></li>
           <li class="detail-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>全程监护：</strong>专业麻醉团队术中全程生命体征监测</span></li>
-          <li class="detail-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>苏醒期管理：</strong>课题研究成果应用于谵妄防治，提升苏醒质量</span></li>
+          <li class="detail-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>苏醒期管理：</strong>课题研究成果应用于<a href="https://baike.baidu.com/item/%E8%B0%B5%E5%A6%84" target="_blank" rel="noopener" class="baike">谵妄</a>防治，提升苏醒质量</span></li>
           <li class="detail-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>特殊人群经验丰富：</strong>成功管理多种伴全身疾病患者</span></li>
         </ul>
       </div>
@@ -577,14 +582,14 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
         <div class="tl-dot"></div>
         <div class="tl-year">2023 — 2025 · 已结题</div>
         <h4>GasMan® 软件在口腔笑气舒适化模拟教学中的研究与应用</h4>
-        <p>主持广东省临床教学基地本科教学改革研究项目，创新性地将GasMan®药代动力学模拟软件引入口腔笑气舒适化教学，实现虚拟仿真与临床实践的深度融合。</p>
+        <p>主持广东省临床教学基地本科教学改革研究项目，创新性地将GasMan®药代动力学模拟软件引入口腔<a href="https://baike.baidu.com/item/%E4%B8%80%E6%B0%A7%E5%8C%96%E4%BA%8C%E6%B0%AE" target="_blank" rel="noopener" class="baike">笑气</a>舒适化教学，实现虚拟仿真与临床实践的深度融合。</p>
         <span class="tl-badge tl-badge-done">已结题</span>
       </div>
       <div class="tl-item" data-status="done">
         <div class="tl-dot"></div>
         <div class="tl-year">2021 — 2023 · 已结题</div>
-        <h4>纳布啡用于防治儿童颌面外科手术全麻苏醒期谵妄的临床观察研究</h4>
-        <p>主持院长科研基金课题，系统研究纳布啡在儿童颌面外科手术中的应用效果，为降低全麻苏醒期谵妄发生率提供了新的药物选择和临床策略。</p>
+        <h4><a href="https://baike.baidu.com/item/%E7%BA%B3%E5%B8%83%E5%95%A1" target="_blank" rel="noopener" class="baike">纳布啡</a>用于防治儿童颌面外科手术全麻苏醒期<a href="https://baike.baidu.com/item/%E8%B0%B5%E5%A6%84" target="_blank" rel="noopener" class="baike">谵妄</a>的临床观察研究</h4>
+        <p>主持院长科研基金课题，系统研究<a href="https://baike.baidu.com/item/%E7%BA%B3%E5%B8%83%E5%95%A1" target="_blank" rel="noopener" class="baike">纳布啡</a>在儿童颌面外科手术中的应用效果，为降低全麻苏醒期<a href="https://baike.baidu.com/item/%E8%B0%B5%E5%A6%84" target="_blank" rel="noopener" class="baike">谵妄</a>发生率提供了新的药物选择和临床策略。</p>
         <span class="tl-badge tl-badge-done">已结题</span>
       </div>
     </div>
@@ -606,16 +611,16 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
       <button class="pub-tab" data-filter="patent">专利</button>
     </div>
     <div class="pub-list reveal d3" id="pubList">
-      <div class="pub-item pub-highlight" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>咽反射敏感患者笑气-氧气吸入镇静下口腔治疗1例报告</h4><p class="pub-meta">赵亮，徐稳安等 · 《中国实用口腔科杂志》录用</p></div>
-      <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>全程舒适化管理策略在一例重度牙科畏惧症患者治疗中的应用</h4><p class="pub-meta">赵亮，徐稳安等 · 《深圳中西医结合杂志》录用</p></div>
-      <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>一例双相情感障碍患者阻生牙拔除术全身麻醉管理及文献综述</h4><p class="pub-meta">赵亮，华泽权等 · 《口腔医学杂志》录用</p></div>
+      <div class="pub-item pub-highlight" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>咽反射敏感患者<a href="https://baike.baidu.com/item/%E4%B8%80%E6%B0%A7%E5%8C%96%E4%BA%8C%E6%B0%AE" target="_blank" rel="noopener" class="baike">笑气-氧气吸入镇静</a>下口腔治疗1例报告</h4><p class="pub-meta">赵亮，徐稳安等 · 《中国实用口腔科杂志》录用</p></div>
+      <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>全程舒适化管理策略在一例重度<a href="https://baike.baidu.com/item/%E7%89%99%E5%8C%BB%E6%81%90%E6%83%A7%E7%97%87/7194208" target="_blank" rel="noopener" class="baike">牙科畏惧症</a>患者治疗中的应用</h4><p class="pub-meta">赵亮，徐稳安等 · 《深圳中西医结合杂志》录用</p></div>
+      <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>一例<a href="https://baike.baidu.com/item/%E5%8F%8C%E7%9B%B8%E9%9A%9C%E7%A2%8D" target="_blank" rel="noopener" class="baike">双相情感障碍</a>患者阻生牙拔除术<a href="https://baike.baidu.com/item/%E5%85%A8%E8%BA%AB%E9%BA%BB%E9%86%89" target="_blank" rel="noopener" class="baike">全身麻醉</a>管理及文献综述</h4><p class="pub-meta">赵亮，华泽权等 · 《口腔医学杂志》录用</p></div>
       <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>口腔颌面外科非困难气道经鼻气管插管的研究进展</h4><p class="pub-meta">冯振鑫，赵亮等 · 《临床麻醉学杂志》2025, 41(10):1114-1118</p></div>
       <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>儿童口腔舒适化治疗方法的研究进展与应用</h4><p class="pub-meta">赵亮，徐稳安等 · 《中国当代医药》2025, 32(10):194-198</p></div>
-      <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>天使综合征儿童全身麻醉下口腔治疗1例报告</h4><p class="pub-meta">赵亮，徐稳安等 · 《中国实用口腔科杂志》2024, 17(5):636-640</p></div>
+      <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4><a href="https://baike.baidu.com/item/%E5%A4%A9%E4%BD%BF%E7%BB%BC%E5%90%88%E5%BE%81" target="_blank" rel="noopener" class="baike">天使综合征</a>儿童<a href="https://baike.baidu.com/item/%E5%85%A8%E8%BA%AB%E9%BA%BB%E9%86%89" target="_blank" rel="noopener" class="baike">全身麻醉</a>下口腔治疗1例报告</h4><p class="pub-meta">赵亮，徐稳安等 · 《中国实用口腔科杂志》2024, 17(5):636-640</p></div>
       <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>全麻复苏的功能神经网络研究进展</h4><p class="pub-meta">冯振鑫，赵亮等 · 《临床麻醉学杂志》2022, 38(12):1317-1321</p></div>
-      <div class="pub-item" data-cat="conf"><span class="pub-type pub-type-c">会议论文</span><h4>全身麻醉在588例口腔手术中的临床应用及效果分析</h4><p class="pub-meta">赵亮，徐稳安等 · 中华口腔医学会镇静镇痛专委会第9次学术年会 · 2024-12</p></div>
-      <div class="pub-item" data-cat="conf"><span class="pub-type pub-type-c">会议论文</span><h4>多学科协作在一例伴癫痫患者下颌骨骨折急诊手术中的应用</h4><p class="pub-meta">赵亮，华泽权等 · 中华口腔医学会口腔急诊专委会第9次学术年会 · 2024-10（优秀壁报）</p></div>
-      <div class="pub-item" data-cat="conf"><span class="pub-type pub-type-c">会议论文</span><h4>虚拟实践，真实成效：GasMan® 软件在口腔笑气舒适化模拟教学中的创新应用研究</h4><p class="pub-meta">赵亮 · 中华口腔医学会口腔医学教育专委会第19次学术年会 · 2024-08</p></div>
+      <div class="pub-item" data-cat="conf"><span class="pub-type pub-type-c">会议论文</span><h4><a href="https://baike.baidu.com/item/%E5%85%A8%E8%BA%AB%E9%BA%BB%E9%86%89" target="_blank" rel="noopener" class="baike">全身麻醉</a>在588例口腔手术中的临床应用及效果分析</h4><p class="pub-meta">赵亮，徐稳安等 · 中华口腔医学会镇静镇痛专委会第9次学术年会 · 2024-12</p></div>
+      <div class="pub-item" data-cat="conf"><span class="pub-type pub-type-c">会议论文</span><h4>多学科协作在一例伴<a href="https://baike.baidu.com/item/%E7%99%AB%E7%97%AB" target="_blank" rel="noopener" class="baike">癫痫</a>患者下颌骨骨折急诊手术中的应用</h4><p class="pub-meta">赵亮，华泽权等 · 中华口腔医学会口腔急诊专委会第9次学术年会 · 2024-10（优秀壁报）</p></div>
+      <div class="pub-item" data-cat="conf"><span class="pub-type pub-type-c">会议论文</span><h4>虚拟实践，真实成效：GasMan® 软件在口腔<a href="https://baike.baidu.com/item/%E4%B8%80%E6%B0%A7%E5%8C%96%E4%BA%8C%E6%B0%AE" target="_blank" rel="noopener" class="baike">笑气</a>舒适化模拟教学中的创新应用研究</h4><p class="pub-meta">赵亮 · 中华口腔医学会口腔医学教育专委会第19次学术年会 · 2024-08</p></div>
       <div class="pub-item" data-cat="conf"><span class="pub-type pub-type-c">会议论文</span><h4>笑-氧混合吸入镇静技术在579例口腔门诊手术中的临床应用</h4><p class="pub-meta">赵亮，徐稳安 · 中华口腔医学会镇静镇痛学术年会</p></div>
       <div class="pub-item" data-cat="patent"><span class="pub-type pub-type-p">发明专利</span><h4>一种麻醉科手术器械支架</h4><p class="pub-meta">冯振鑫，赵亮等 · 中国专利：CN217744599U · 2022.11.08</p></div>
     </div>
@@ -649,7 +654,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
       </div>
       <div class="news-card reveal d5">
         <div class="news-img"><div class="news-img-bg news-img-bg-b"><div class="news-img-pattern"></div><div class="news-img-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div></div><span class="news-date">2024年8月</span></div>
-        <div class="news-body"><span class="news-tag">教学创新</span><h3>GasMan® 模拟教学成果亮相全国口腔医学教育年会</h3><p>在中华口腔医学会口腔医学教育专委会第19次学术年会上，分享了GasMan®软件在口腔笑气舒适化模拟教学中的创新应用成果。</p></div>
+        <div class="news-body"><span class="news-tag">教学创新</span><h3>GasMan® 模拟教学成果亮相全国口腔医学教育年会</h3><p>在中华口腔医学会口腔医学教育专委会第19次学术年会上，分享了GasMan®软件在口腔<a href="https://baike.baidu.com/item/%E4%B8%80%E6%B0%A7%E5%8C%96%E4%BA%8C%E6%B0%AE" target="_blank" rel="noopener" class="baike">笑气</a>舒适化模拟教学中的创新应用成果。</p></div>
       </div>
       <div class="news-card reveal d6">
         <div class="news-img"><div class="news-img-bg news-img-bg-c"><div class="news-img-pattern"></div><div class="news-img-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div></div><span class="news-date">2023年</span></div>
@@ -668,11 +673,11 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
       <p class="sec-desc">关于口腔舒适化治疗，您可能想了解的问题。</p>
     </div>
     <div class="faq-list reveal d2">
-      <div class="faq-item"><button class="faq-q">笑气镇静安全吗？会不会有副作用？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><div class="faq-a-inner"><div class="faq-a-text">笑气-氧气吸入镇静是一种非常成熟的舒适化技术，在全球范围内已有超过150年的临床应用历史。在专业人员的规范操作和全程监护下，其安全性极高。常见的轻微副作用包括短暂的头晕或欣快感，停止吸入后数分钟即可完全恢复。治疗前医生会详细评估患者的适应症和禁忌症，确保安全。</div></div></div></div>
-      <div class="faq-item"><button class="faq-q">儿童可以做全麻下口腔治疗吗？几岁可以？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><div class="faq-a-inner"><div class="faq-a-text">可以。对于低龄（通常3岁以下）或无法配合常规治疗的儿童，全麻下口腔治疗是国际公认的安全、有效方案。治疗由专业麻醉团队全程监护，口腔医生在一次麻醉中完成所有治疗，避免了多次就诊给孩子带来的心理创伤。我院已完成数百例儿童全麻下口腔治疗，积累了丰富经验。</div></div></div></div>
-      <div class="faq-item"><button class="faq-q">什么样的患者适合口腔舒适化治疗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><div class="faq-a-inner"><div class="faq-a-text">舒适化治疗适合多种人群：①牙科畏惧症患者；②低龄儿童；③特殊人群（如自闭症、发育障碍、精神疾病等）；④咽反射敏感患者；⑤需要进行复杂、长时间口腔手术的患者；⑥对疼痛特别敏感的患者。医生会根据具体情况推荐最合适的舒适化方案。</div></div></div></div>
-      <div class="faq-item"><button class="faq-q">全麻下做完口腔治疗，多久能醒来？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><div class="faq-a-inner"><div class="faq-a-text">口腔全麻手术多为短小手术，通常在手术结束后10-30分钟内患者即可苏醒。我院在苏醒期管理方面有专门的研究和优化方案（如纳布啡的应用），能有效降低苏醒期躁动和谵妄的发生率，提升苏醒质量。完全清醒后，经麻醉医生评估确认安全，方可离院。</div></div></div></div>
-      <div class="faq-item"><button class="faq-q">有全身疾病（如癫痫、心脏病）能做口腔舒适化治疗吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><div class="faq-a-inner"><div class="faq-a-text">可以，但需要充分的术前评估和多学科协作。我院在这方面有丰富的经验，已成功为癫痫、双相情感障碍、天使综合征等多种伴全身疾病患者实施了舒适化口腔治疗。麻醉医生会在术前全面评估病情，与相关专科医生协作，制定个性化的麻醉方案，最大程度确保治疗安全。</div></div></div></div>
+      <div class="faq-item"><button class="faq-q"><a href="https://baike.baidu.com/item/%E4%B8%80%E6%B0%A7%E5%8C%96%E4%BA%8C%E6%B0%AE" target="_blank" rel="noopener" class="baike" style="color:inherit;text-decoration:none">笑气镇静</a>安全吗？会不会有副作用？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><div class="faq-a-inner"><div class="faq-a-text"><a href="https://baike.baidu.com/item/%E4%B8%80%E6%B0%A7%E5%8C%96%E4%BA%8C%E6%B0%AE" target="_blank" rel="noopener" class="baike">笑气-氧气吸入镇静</a>是一种非常成熟的舒适化技术，在全球范围内已有超过150年的临床应用历史。在专业人员的规范操作和全程监护下，其安全性极高。常见的轻微副作用包括短暂的头晕或欣快感，停止吸入后数分钟即可完全恢复。治疗前医生会详细评估患者的适应症和禁忌症，确保安全。</div></div></div></div>
+      <div class="faq-item"><button class="faq-q">儿童可以做全麻下口腔治疗吗？几岁可以？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><div class="faq-a-inner"><div class="faq-a-text">可以。对于低龄（通常3岁以下）或无法配合常规治疗的儿童，<a href="https://baike.baidu.com/item/%E5%85%A8%E8%BA%AB%E9%BA%BB%E9%86%89" target="_blank" rel="noopener" class="baike">全麻下口腔治疗</a>是国际公认的安全、有效方案。治疗由专业麻醉团队全程监护，口腔医生在一次麻醉中完成所有治疗，避免了多次就诊给孩子带来的心理创伤。我院已完成数百例儿童全麻下口腔治疗，积累了丰富经验。</div></div></div></div>
+      <div class="faq-item"><button class="faq-q">什么样的患者适合口腔舒适化治疗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><div class="faq-a-inner"><div class="faq-a-text">舒适化治疗适合多种人群：①<a href="https://baike.baidu.com/item/%E7%89%99%E5%8C%BB%E6%81%90%E6%83%A7%E7%97%87/7194208" target="_blank" rel="noopener" class="baike">牙科畏惧症</a>患者；②低龄儿童；③特殊人群（如自闭症、发育障碍、精神疾病等）；④咽反射敏感患者；⑤需要进行复杂、长时间口腔手术的患者；⑥对疼痛特别敏感的患者。医生会根据具体情况推荐最合适的舒适化方案。</div></div></div></div>
+      <div class="faq-item"><button class="faq-q">全麻下做完口腔治疗，多久能醒来？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><div class="faq-a-inner"><div class="faq-a-text">口腔<a href="https://baike.baidu.com/item/%E5%85%A8%E8%BA%AB%E9%BA%BB%E9%86%89" target="_blank" rel="noopener" class="baike">全麻</a>手术多为短小手术，通常在手术结束后10-30分钟内患者即可苏醒。我院在苏醒期管理方面有专门的研究和优化方案（如<a href="https://baike.baidu.com/item/%E7%BA%B3%E5%B8%83%E5%95%A1" target="_blank" rel="noopener" class="baike">纳布啡</a>的应用），能有效降低苏醒期躁动和<a href="https://baike.baidu.com/item/%E8%B0%B5%E5%A6%84" target="_blank" rel="noopener" class="baike">谵妄</a>的发生率，提升苏醒质量。完全清醒后，经麻醉医生评估确认安全，方可离院。</div></div></div></div>
+      <div class="faq-item"><button class="faq-q">有全身疾病（如<a href="https://baike.baidu.com/item/%E7%99%AB%E7%97%AB" target="_blank" rel="noopener" class="baike">癫痫</a>、心脏病）能做口腔舒适化治疗吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><div class="faq-a-inner"><div class="faq-a-text">可以，但需要充分的术前评估和多学科协作。我院在这方面有丰富的经验，已成功为<a href="https://baike.baidu.com/item/%E7%99%AB%E7%97%AB" target="_blank" rel="noopener" class="baike">癫痫</a>、<a href="https://baike.baidu.com/item/%E5%8F%8C%E7%9B%B8%E9%9A%9C%E7%A2%8D" target="_blank" rel="noopener" class="baike">双相情感障碍</a>、<a href="https://baike.baidu.com/item/%E5%A4%A9%E4%BD%BF%E7%BB%BC%E5%90%88%E5%BE%81" target="_blank" rel="noopener" class="baike">天使综合征</a>等多种伴全身疾病患者实施了舒适化口腔治疗。麻醉医生会在术前全面评估病情，与相关专科医生协作，制定个性化的麻醉方案，最大程度确保治疗安全。</div></div></div></div>
     </div>
   </div>
 </section>
@@ -718,10 +723,10 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-grid">
-    <div class="footer-brand"><h3>口腔舒适化中心</h3><p>以精准麻醉技术为核心，为每一位患者提供安全、舒适、无痛的口腔诊疗体验。专业团队，温暖守护。</p></div>
+    <div class="footer-brand"><h3>口腔舒适化中心</h3><p>南方医科大学深圳口腔医院（坪山）麻醉科，以精准麻醉技术为核心，为每一位患者提供安全、舒适、无痛的口腔诊疗体验。</p></div>
     <div class="footer-col"><h4>舒适化方案</h4><ul><li><a href="#methods">笑气镇静</a></li><li><a href="#methods">全身麻醉</a></li><li><a href="#methods">静脉镇静</a></li><li><a href="#methods">无痛局麻</a></li></ul></div>
     <div class="footer-col"><h4>了解更多</h4><ul><li><a href="#about">关于医生</a></li><li><a href="#research">科研成果</a></li><li><a href="#publications">论文专利</a></li><li><a href="#news">最新资讯</a></li></ul></div>
-    <div class="footer-col"><h4>快速链接</h4><ul><li><a href="#faq">常见问题</a></li><li><a href="#wechat">关注公众号</a></li><li><a href="#contact">预约咨询</a></li><li><a href="#hero">回到顶部</a></li></ul></div>
+    <div class="footer-col"><h4>快速链接</h4><ul><li><a href="#faq">常见问题</a></li><li><a href="#wechat">关注公众号</a></li><li><a href="https://www.smuszsh.com/" target="_blank" rel="noopener">医院官网</a></li><li><a href="#hero">回到顶部</a></li></ul></div>
   </div>
   <div class="footer-bottom"><span>© 2025 口腔舒适化中心 · 赵亮医生</span><span>南方医科大学深圳口腔医院（坪山）</span></div>
 </footer>
