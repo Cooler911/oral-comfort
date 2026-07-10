@@ -78,9 +78,9 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:oklch(50% .15 250 / .08);color:var(--c-primary-d);padding:.4rem 1.1rem;border-radius:100px;font-size:.78rem;font-weight:600;margin-bottom:1.75rem;letter-spacing:.03em;border:1px solid oklch(50% .15 250 / .1);backdrop-filter:blur(8px)}
 .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--c-accent);animation:dot-pulse 2.5s ease-in-out infinite}
 @keyframes dot-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.8)}}
-.hero-title{font-family:var(--serif);font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:900;line-height:1.12;color:var(--c-navy);margin-bottom:1.5rem;letter-spacing:-.025em}
+.hero-title{font-family:var(--serif);font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:900;line-height:1.12;color:var(--c-navy);margin-bottom:1.5rem;letter-spacing:-.025em;text-shadow:0 2px 16px oklch(20% 0.02 250 / 0.04)}
 .hero-title em{font-style:normal;color:var(--c-primary);position:relative;display:inline-block}
-.hero-title em::after{content:'';position:absolute;bottom:.1em;left:-.05em;right:-.05em;height:.32em;background:oklch(50% .15 250 / .12);border-radius:4px;z-index:-1;transform:skew(-2deg)}
+.hero-title em::after{content:'';position:absolute;bottom:.1em;left:-.05em;right:-.05em;height:.35em;background:oklch(50% .15 250 / .14);border-radius:4px;z-index:-1;transform:skew(-2deg)}
 .hero-desc{font-size:clamp(1rem,1.8vw,1.15rem);line-height:1.85;color:var(--c-text-2);margin-bottom:2.5rem;max-width:500px}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.9rem;border:none;cursor:pointer;transition:all .3s var(--ease);border-radius:100px;padding:.85rem 2rem}
@@ -131,10 +131,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .about-photo{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,oklch(93% .03 250),oklch(85% .06 250),oklch(78% .08 250));display:flex;align-items:center;justify-content:center}
 .about-photo-pattern{position:absolute;inset:0;opacity:.06;background-image:radial-gradient(circle at 2px 2px,oklch(30% .08 250) 1px,transparent 1px);background-size:20px 20px}
 .about-photo-overlay{position:absolute;inset:0;background:linear-gradient(to top,oklch(12% .04 250 / .7) 0%,oklch(12% .04 250 / .2) 40%,transparent 70%);z-index:1}
-.about-photo-content{position:relative;z-index:2;text-align:center;padding:2rem}
-.about-photo-icon{margin:0 auto 1rem}
-.about-photo-content p{color:oklch(90% .02 250);font-size:.85rem;opacity:.7}
-.about-photo-content .photo-hint{font-size:.72rem;opacity:.4;margin-top:.5rem}
+
 .about-info-head{margin-bottom:1.5rem}
 .about-info-head h2{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2rem);font-weight:900;color:var(--c-navy);margin-bottom:.3rem}
 .about-hospital{display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem;font-size:.82rem;color:var(--c-primary);font-weight:500}
@@ -246,7 +243,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .news-img-bg-a{background:linear-gradient(135deg,oklch(93% .03 250),oklch(85% .06 250),oklch(78% .08 250))}
 .news-img-bg-b{background:linear-gradient(135deg,oklch(93% .03 280),oklch(85% .06 280),oklch(78% .08 280))}
 .news-img-bg-c{background:linear-gradient(135deg,oklch(93% .03 220),oklch(85% .06 220),oklch(78% .08 220))}
-.news-img-icon{opacity:.12;color:var(--c-navy)}.news-img-icon svg{width:56px;height:56px}
+.news-img-icon{opacity:.12;color:var(--c-navy);display:flex;align-items:center;justify-content:center}.news-img-icon svg{width:56px;height:56px}
 .news-img-pattern{position:absolute;inset:0;opacity:.04;background-image:radial-gradient(circle at 2px 2px,currentColor 1px,transparent 1px);background-size:14px 14px}
 .news-date{position:absolute;top:.75rem;left:.75rem;background:oklch(99% .003 250 / .9);backdrop-filter:blur(8px);padding:.3rem .65rem;border-radius:var(--r-sm);font-size:.68rem;font-weight:600;color:var(--c-text-2);box-shadow:var(--shadow-sm)}
 .news-body{padding:1.25rem;flex:1;display:flex;flex-direction:column}
@@ -314,6 +311,74 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 /* ANIM */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s var(--ease),transform .65s var(--ease)}.reveal.in{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}.d6{transition-delay:.48s}
+
+/* Scroll-triggered scale-in for hero */
+@keyframes scale-in{from{opacity:0;transform:scale(.92) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.hero-card.in{animation:scale-in .7s var(--ease) forwards}
+
+/* Stagger children on reveal */
+.stagger-children>*{opacity:0;transform:translateY(18px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.stagger-children.in>*:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.1s}
+.stagger-children.in>*:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.2s}
+.stagger-children.in>*:nth-child(3){opacity:1;transform:translateY(0);transition-delay:.3s}
+.stagger-children.in>*:nth-child(4){opacity:1;transform:translateY(0);transition-delay:.4s}
+.stagger-children.in>*:nth-child(5){opacity:1;transform:translateY(0);transition-delay:.5s}
+.stagger-children.in>*:nth-child(6){opacity:1;transform:translateY(0);transition-delay:.6s}
+
+/* Timeline enhanced styling */
+.timeline{padding-left:3rem}
+.timeline::before{left:8px;width:3px;background:linear-gradient(to bottom,var(--c-primary),var(--c-accent),oklch(85% .04 250));border-radius:2px}
+.tl-dot{left:-3rem;width:14px;height:14px;border:3px solid var(--c-bg);box-shadow:0 0 0 2px var(--c-primary),0 0 8px oklch(50% .15 250 / .15);transition:all .3s}
+.tl-item:hover .tl-dot{transform:scale(1.3);box-shadow:0 0 0 3px var(--c-primary),0 0 16px oklch(50% .15 250 / .25)}
+.tl-item{padding:0 0 2.5rem 2rem;transition:all .3s var(--ease)}
+.tl-item:hover{transform:translateX(4px)}
+.tl-item h4{transition:color .2s}
+.tl-item:hover h4{color:var(--c-primary-d)}
+
+/* News featured highlight */
+.news-card-featured{border-left:3px solid var(--c-primary)}
+.news-card-featured .news-body::before{content:'★ 置顶';position:absolute;top:-.1rem;right:0;font-size:.6rem;font-weight:700;color:var(--c-primary);letter-spacing:.05em;background:oklch(50% .15 250 / .08);padding:.15rem .5rem;border-radius:4px}
+.news-card-featured .news-body{position:relative;padding-top:1.6rem}
+
+/* News filter tabs */
+.news-tabs{display:flex;gap:.4rem;margin-bottom:1.5rem;flex-wrap:wrap;justify-content:center}
+.news-tab{padding:.4rem .85rem;border-radius:100px;font-size:.78rem;font-weight:600;cursor:pointer;border:1.5px solid var(--c-border);background:transparent;color:var(--c-text-2);transition:all .25s var(--ease);white-space:nowrap}
+.news-tab:hover{border-color:var(--c-primary);color:var(--c-primary-d)}
+.news-tab.active{background:var(--c-primary);color:oklch(98% .005 250);border-color:var(--c-primary)}
+
+/* Load more button */
+.news-load-more{text-align:center;margin-top:2rem}
+.news-load-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 2rem;border-radius:100px;font-size:.88rem;font-weight:600;cursor:pointer;border:1.5px solid var(--c-border);background:var(--c-surface);color:var(--c-text-2);transition:all .3s var(--ease)}
+.news-load-btn:hover{border-color:var(--c-primary);color:var(--c-primary-d);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.news-load-btn svg{width:16px;height:16px;transition:transform .3s}
+.news-load-btn:hover svg{transform:translateY(2px)}
+
+/* News category tag colors */
+.news-tag-academic{background:oklch(50% .15 250 / .07);color:oklch(38% .12 250)}
+.news-tag-research{background:oklch(58% .10 220 / .08);color:oklch(38% .10 220)}
+.news-tag-honor{background:oklch(70% .12 85 / .1);color:oklch(40% .10 85)}
+.news-tag-exchange{background:oklch(52% .12 280 / .08);color:oklch(38% .10 280)}
+.news-tag-teaching{background:oklch(55% .10 175 / .08);color:oklch(38% .08 175)}
+.news-tag-humanity{background:oklch(60% .12 340 / .08);color:oklch(40% .10 340)}
+.news-tag-science{background:oklch(52% .12 145 / .08);color:oklch(38% .08 145)}
+
+/* Enhanced card hover effects */
+.m-card,.news-card,.pub-item,.faq-item{transition:all .35s var(--ease)}
+.m-card:hover{transform:translateY(-6px) scale(1.01);box-shadow:var(--shadow-lg)}
+.news-card:hover{transform:translateY(-5px) scale(1.01);box-shadow:var(--shadow-md)}
+.pub-item:hover{transform:translateX(4px);border-color:oklch(50% .15 250 / .2);box-shadow:var(--shadow-sm)}
+
+/* About photo improved placeholder */
+.about-photo{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,oklch(93% .03 250),oklch(85% .06 250),oklch(78% .08 250));display:flex;align-items:center;justify-content:center}
+.about-photo img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:0}
+.about-photo-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;position:relative;z-index:2;padding:2rem}
+.about-photo-placeholder svg{opacity:.25;filter:drop-shadow(0 2px 8px oklch(50% .15 250 / .1))}
+.about-photo-placeholder .photo-name{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:oklch(30% .06 250);letter-spacing:.05em}
+.about-photo-placeholder .photo-hint{font-size:.72rem;color:oklch(50% .03 250);opacity:.6;text-align:center}
+
+/* Hero avatar img */
+.hero-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+.hero-avatar{overflow:hidden}
 
 /* RESPONSIVE */
 @media(max-width:1024px){.hero-inner{grid-template-columns:1fr;gap:2.5rem}.hero-visual{order:-1}.hero-card{max-width:380px;margin:0 auto}.about-grid{grid-template-columns:1fr}.about-photo{max-height:350px}.detail-grid,.detail-grid.rev{grid-template-columns:1fr;gap:2rem;direction:ltr}.wechat-inner{grid-template-columns:1fr;text-align:center}.wechat-qr-wrap{margin:0 auto}.wechat-content .wechat-features{align-items:center}.footer-grid{grid-template-columns:1fr 1fr}}
@@ -391,7 +456,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
       </div>
       <div class="hero-card reveal">
         <div class="hero-card-top">
-          <div class="hero-avatar">赵</div>
+          <div class="hero-avatar"><img src="doctor-photo.jpg" alt="赵亮医生" width="60" height="60"></div>
           <div class="hero-card-info"><h3>赵亮 医生</h3><p>麻醉科主治医师 · 口腔舒适化专家</p></div>
         </div>
         <div class="hero-stats">
@@ -417,60 +482,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
       <div class="about-photo reveal">
         <div class="about-photo-pattern"></div>
         <div class="about-photo-overlay"></div>
-        <div class="about-photo-content">
-          <svg width="220" height="280" viewBox="0 0 220 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- 卡通医生 -->
-            <!-- 身体/白大褂 -->
-            <path d="M70 140c0 0-10 20-10 50s5 60 5 60h110s5-30 5-60-10-50-10-50H70z" fill="white" stroke="#3b82f6" stroke-width="2"/>
-            <path d="M85 140v110M135 140v110" stroke="#dbeafe" stroke-width="1" stroke-dasharray="4 3"/>
-            <!-- 听诊器 -->
-            <path d="M100 160c0 0-15 10-15 30s10 20 10 20" stroke="#3b82f6" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-            <circle cx="95" cy="210" r="6" fill="#3b82f6" opacity=".3" stroke="#3b82f6" stroke-width="1.5"/>
-            <circle cx="95" cy="210" r="3" fill="#3b82f6"/>
-            <!-- 口袋 -->
-            <rect x="120" y="165" width="22" height="28" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
-            <rect x="125" y="168" width="12" height="3" rx="1.5" fill="#93c5fd"/>
-            <!-- 头 -->
-            <ellipse cx="110" cy="85" rx="42" ry="48" fill="#fde68a" stroke="#f59e0b" stroke-width="1.5"/>
-            <!-- 头发 -->
-            <path d="M70 70c0-25 18-42 40-42s40 17 40 42c0 0-8-15-20-18s-20 5-20 5-8-2-20 5-20 10-20 10z" fill="#1e3a5f"/>
-            <!-- 眼睛 -->
-            <ellipse cx="96" cy="88" rx="6" ry="7" fill="white"/>
-            <ellipse cx="124" cy="88" rx="6" ry="7" fill="white"/>
-            <circle cx="98" cy="89" r="3.5" fill="#1e3a5f"/>
-            <circle cx="126" cy="89" r="3.5" fill="#1e3a5f"/>
-            <circle cx="99" cy="87.5" r="1.2" fill="white"/>
-            <circle cx="127" cy="87.5" r="1.2" fill="white"/>
-            <!-- 眉毛 -->
-            <path d="M88 78c2-3 8-5 12-3" stroke="#1e3a5f" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <path d="M120 75c4-2 10 0 12 3" stroke="#1e3a5f" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <!-- 嘴巴 - 微笑 -->
-            <path d="M100 102c4 6 16 6 20 0" stroke="#1e3a5f" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <!-- 口罩 -->
-            <path d="M85 98c0 8 10 16 25 16s25-8 25-16" fill="#93c5fd" stroke="#3b82f6" stroke-width="1.5"/>
-            <path d="M82 98h56" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M85 98l-8-3M135 98l8-3" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
-            <!-- 口罩褶皱 -->
-            <path d="M92 103h36M94 107h32" stroke="#bfdbfe" stroke-width=".8"/>
-            <!-- 耳朵 -->
-            <ellipse cx="68" cy="90" rx="6" ry="10" fill="#fde68a" stroke="#f59e0b" stroke-width="1"/>
-            <ellipse cx="152" cy="90" rx="6" ry="10" fill="#fde68a" stroke="#f59e0b" stroke-width="1"/>
-            <!-- 名牌 -->
-            <rect x="98" y="148" width="40" height="14" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
-            <text x="118" y="159" text-anchor="middle" font-size="8" fill="#1e3a5f" font-weight="bold">赵亮</text>
-            <!-- 小牙齿装饰 -->
-            <g transform="translate(160,50)" opacity=".6">
-              <path d="M0 0c-4-12-12-16-16-16s-8 4-8 12c0 4 2 8 4 12s4 8 6 12c2-4 4-8 6-12s4-8 4-12c0-4-2-4-2-4" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
-            </g>
-            <!-- OK手势 -->
-            <g transform="translate(170,130)">
-              <circle cx="0" cy="0" r="10" fill="#fde68a" stroke="#f59e0b" stroke-width="1.5"/>
-              <path d="M-4-2c0-3 2-6 4-6s4 3 4 6" stroke="#f59e0b" stroke-width="2" fill="none" stroke-linecap="round"/>
-              <circle cx="0" cy="0" r="4" fill="none" stroke="#f59e0b" stroke-width="2"/>
-            </g>
-          </svg>
-          <p style="margin-top:.5rem;font-size:.75rem;opacity:.5">（可替换为个人照片）</p>
-        </div>
+        <img src="doctor-photo.jpg" alt="赵亮医生" loading="lazy">
       </div>
       <div class="about-info reveal d2">
         <div class="about-info-head">
@@ -753,6 +765,20 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 </section>
 
 <!-- NEWS -->
+<!-- 
+  ╔══════════════════════════════════════════════════════════╗
+  ║  口腔舒适化最新资讯 — 数据驱动可更新组件                    ║
+  ╠══════════════════════════════════════════════════════════╣
+  ║  如何添加新资讯：                                         ║
+  ║  1. 在 GitHub 上编辑 news.json 文件                       ║
+  ║  2. 按格式添加新条目（复制已有条目修改即可）                 ║
+  ║  3. 保存后自动生效，无需修改 HTML                          ║
+  ║                                                          ║
+  ║  支持的 category 值：                                     ║
+  ║  学术进展 | 课题进展 | 荣誉 | 学术交流                     ║
+  ║  教学创新 | 人文关怀 | 科普知识                            ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
 <section class="section news" id="news">
   <div class="container">
     <div class="sec-hdr reveal">
@@ -760,63 +786,13 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
       <h2 class="sec-title">口腔舒适化最新资讯</h2>
       <p class="sec-desc">关注口腔舒适化领域的最新动态、学术进展与科普知识。</p>
     </div>
-    <div class="news-grid">
-      <div class="news-card reveal d1">
-        <div class="news-img"><div class="news-img-bg news-img-bg-a"><div class="news-img-pattern"></div><svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity=".3">
-          <rect x="15" y="10" width="50" height="60" rx="8" fill="white" stroke="#3b82f6" stroke-width="2"/>
-          <path d="M28 28h24M28 38h18M28 48h20" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="55" cy="55" r="10" fill="#3b82f6" opacity=".3"/>
-          <path d="M52 55l2 2 4-4" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-        </svg></div><span class="news-date">2025年7月</span></div>
-        <div class="news-body"><span class="news-tag">学术进展</span><h3>《口腔颌面外科非困难气道经鼻气管插管的研究进展》正式发表</h3><p>赵亮医生参与的综述论文在《临床麻醉学杂志》2025年第41卷第10期正式发表，系统梳理了经鼻气管插管技术在口腔颌面外科领域的最新研究进展。</p></div>
-      </div>
-      <div class="news-card reveal d2">
-        <div class="news-img"><div class="news-img-bg news-img-bg-b"><div class="news-img-pattern"></div><svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity=".3">
-          <circle cx="40" cy="40" r="28" fill="white" stroke="#6366f1" stroke-width="2"/>
-          <path d="M40 22v18l10 6" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="40" cy="40" r="4" fill="#6366f1" opacity=".4"/>
-          <circle cx="58" cy="25" r="5" fill="#fbbf24" opacity=".4"/>
-        </svg></div><span class="news-date">2025年</span></div>
-        <div class="news-body"><span class="news-tag">课题进展</span><h3>新课题正式启动：特殊人群口腔舒适化麻醉管理模式研究</h3><p>赵亮医生主持的2026-2028年度院长科研基金课题正式获批立项，聚焦特殊人群口腔舒适化麻醉的系统化管理。</p></div>
-      </div>
-      <div class="news-card reveal d3">
-        <div class="news-img"><div class="news-img-bg news-img-bg-c"><div class="news-img-pattern"></div><svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity=".3">
-          <path d="M40 15l6 12h13l-10 8 4 13-13-8-13 8 4-13-10-8h13z" fill="#fbbf24" stroke="#f59e0b" stroke-width="1.5"/>
-          <circle cx="40" cy="55" r="12" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
-          <path d="M35 53l3 3 7-7" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-        </svg></div><span class="news-date">2024年</span></div>
-        <div class="news-body"><span class="news-tag">荣誉</span><h3>摄影作品获"健康中国"影像大展优秀奖</h3><p>赵亮医生摄影作品《舒适之美》荣获2024年"健康中国"影像大展优秀奖，用镜头记录口腔舒适化诊疗中的温暖瞬间。</p></div>
-      </div>
-      <div class="news-card reveal d4">
-        <div class="news-img"><div class="news-img-bg news-img-bg-a"><div class="news-img-pattern"></div><svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity=".3">
-          <circle cx="30" cy="35" r="14" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
-          <circle cx="50" cy="35" r="14" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
-          <path d="M38 35l4 4 8-8" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-          <rect x="20" y="55" width="40" height="8" rx="4" fill="#3b82f6" opacity=".2"/>
-        </svg></div><span class="news-date">2024年10月</span></div>
-        <div class="news-body"><span class="news-tag">学术交流</span><h3>多学科协作案例获中华口腔医学会优秀壁报</h3><p>壁报在中华口腔医学会口腔急诊年会上获评优秀壁报，展示了多学科协作在复杂病例中的价值。</p></div>
-      </div>
-      <div class="news-card reveal d5">
-        <div class="news-img"><div class="news-img-bg news-img-bg-b"><div class="news-img-pattern"></div><svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity=".3">
-          <rect x="15" y="15" width="22" height="50" rx="4" fill="white" stroke="#6366f1" stroke-width="1.5"/>
-          <rect x="43" y="15" width="22" height="50" rx="4" fill="white" stroke="#6366f1" stroke-width="1.5"/>
-          <path d="M26 30h0M26 38h0M26 46h0M54 30h0M54 38h0M54 46h0" stroke="#6366f1" stroke-width="3" stroke-linecap="round"/>
-          <path d="M25 22l6-6h18l6 6" stroke="#6366f1" stroke-width="1.5" fill="none"/>
-        </svg></div><span class="news-date">2024年8月</span></div>
-        <div class="news-body"><span class="news-tag">教学创新</span><h3>GasMan® 模拟教学成果亮相全国口腔医学教育年会</h3><p>在中华口腔医学会口腔医学教育专委会第19次学术年会上，分享了GasMan®软件在口腔<a href="https://baike.baidu.com/item/%E4%B8%80%E6%B0%A7%E5%8C%96%E4%BA%8C%E6%B0%AE" target="_blank" rel="noopener" class="baike">笑气</a>舒适化模拟教学中的创新应用成果。</p></div>
-      </div>
-      <div class="news-card reveal d6">
-        <div class="news-img"><div class="news-img-bg news-img-bg-c"><div class="news-img-pattern"></div><svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity=".3">
-          <circle cx="40" cy="30" r="15" fill="white" stroke="#8b5cf6" stroke-width="1.5"/>
-          <path d="M35 45c0 0 3 6 5 6s5-6 5-6" fill="white" stroke="#8b5cf6" stroke-width="1.5"/>
-          <path d="M25 35c-8 2-12 10-8 18s12 10 20 8" stroke="#8b5cf6" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <circle cx="36" cy="28" r="2" fill="#1e3a5f"/>
-          <circle cx="44" cy="28" r="2" fill="#1e3a5f"/>
-          <path d="M37 34c1.5 2 4.5 2 6 0" stroke="#1e3a5f" stroke-width="1" stroke-linecap="round" fill="none"/>
-          <path d="M30 55l5-5M50 55l-5-5" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
-        </svg></div><span class="news-date">2023年</span></div>
-        <div class="news-body"><span class="news-tag">人文关怀</span><h3>摄影作品《小患者用OK手势感谢我》获年度十佳作品</h3><p>记录小患者术后用OK手势向医生表达感谢的温馨照片，荣获2023年度《广东卫生健康》人文类十佳作品。</p></div>
-      </div>
+    <!-- 分类筛选标签（由 JS 动态渲染） -->
+    <div class="news-tabs reveal d1" id="newsTabs"></div>
+    <!-- 新闻卡片网格（由 JS 从 NEWS_DATA 渲染） -->
+    <div class="news-grid" id="newsGrid"></div>
+    <!-- 加载更多按钮 -->
+    <div class="news-load-more" id="newsLoadMore" style="display:none">
+      <button class="news-load-btn" id="newsLoadBtn">加载更多 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
     </div>
   </div>
 </section>
@@ -891,25 +867,218 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 <button class="btt" id="btt" aria-label="回到顶部"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg></button>
 
 <script>
+/*
+ * ╔══════════════════════════════════════════════════════════╗
+ * ║  口腔舒适化最新资讯 — 数据源                              ║
+ * ╠══════════════════════════════════════════════════════════╣
+ * ║  添加新资讯：编辑 news.json 文件即可，无需修改 HTML              ║
+ * ║                                                          ║
+ * ║  字段说明：                                               ║
+ * ║    id       - 唯一标识（递增数字即可）                     ║
+ * ║    date     - 日期字符串，如 "2025-07" 或 "2025年7月"      ║
+ * ║    category - 分类（必须是下方 CATEGORIES 之一）           ║
+ * ║    title    - 标题                                        ║
+ * ║    summary  - 摘要内容                                    ║
+ * ║    link     - 可选，点击跳转的 URL                         ║
+ * ║    featured - 可选，true 则置顶高亮显示                    ║
+ * ║                                                          ║
+ * ║  支持的 category：                                       ║
+ * ║    学术进展 | 课题进展 | 荣誉 | 学术交流                   ║
+ * ║    教学创新 | 人文关怀 | 科普知识                          ║
+ * ╚══════════════════════════════════════════════════════════╝
+ */
+let NEWS_DATA = [];
+
+/* 从 news.json 加载资讯数据 */
+async function loadNewsData() {
+  try {
+    const resp = await fetch('news.json?t=' + Date.now());
+    if (resp.ok) {
+      NEWS_DATA = await resp.json();
+    } else {
+      console.warn('news.json 加载失败');
+    }
+  } catch (e) {
+    console.warn('news.json 加载异常');
+  }
+  renderNewsTabs();
+  renderNewsCards();
+}
+
+/* 支持的分类列表（用于生成筛选标签） */
+const CATEGORIES = ["学术进展", "课题进展", "荣誉", "学术交流", "教学创新", "人文关怀", "科普知识"];
+
+/* 每次显示的卡片数量 */
+const NEWS_PAGE_SIZE = 6;
+
+/* 每个 category 对应的样式类名和 SVG 图标 */
+const CATEGORY_CONFIG = {
+  "学术进展": {
+    tagClass: "news-tag-academic",
+    bgClass: "news-img-bg-a",
+    icon: '<svg width="56" height="56" viewBox="0 0 56 56" fill="none"><rect x="10" y="7" width="36" height="42" rx="6" fill="white" stroke="#3b82f6" stroke-width="2"/><path d="M19 20h18M19 28h12M19 36h15" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/><circle cx="40" cy="40" r="8" fill="#3b82f6" opacity=".3"/><path d="M37 40l2 2 4-4" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/></svg>'
+  },
+  "课题进展": {
+    tagClass: "news-tag-research",
+    bgClass: "news-img-bg-b",
+    icon: '<svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="20" fill="white" stroke="#6366f1" stroke-width="2"/><path d="M28 15v13l7 4" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"/><circle cx="28" cy="28" r="3" fill="#6366f1" opacity=".4"/></svg>'
+  },
+  "荣誉": {
+    tagClass: "news-tag-honor",
+    bgClass: "news-img-bg-c",
+    icon: '<svg width="56" height="56" viewBox="0 0 56 56" fill="none"><path d="M28 10l4.5 9h9.5l-7.5 6 3 10-9.5-6-9.5 6 3-10-7.5-6h9.5z" fill="#fbbf24" stroke="#f59e0b" stroke-width="1.5"/><circle cx="28" cy="40" r="8" fill="white" stroke="#3b82f6" stroke-width="1.5"/><path d="M24 39l3 3 5-5" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/></svg>'
+  },
+  "学术交流": {
+    tagClass: "news-tag-exchange",
+    bgClass: "news-img-bg-a",
+    icon: '<svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="20" cy="24" r="10" fill="white" stroke="#3b82f6" stroke-width="1.5"/><circle cx="36" cy="24" r="10" fill="white" stroke="#3b82f6" stroke-width="1.5"/><path d="M26 24l4 4 6-6" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/><rect x="14" y="40" width="28" height="6" rx="3" fill="#3b82f6" opacity=".2"/></svg>'
+  },
+  "教学创新": {
+    tagClass: "news-tag-teaching",
+    bgClass: "news-img-bg-b",
+    icon: '<svg width="56" height="56" viewBox="0 0 56 56" fill="none"><rect x="10" y="10" width="16" height="36" rx="3" fill="white" stroke="#6366f1" stroke-width="1.5"/><rect x="30" y="10" width="16" height="36" rx="3" fill="white" stroke="#6366f1" stroke-width="1.5"/><path d="M18 22h0M18 28h0M18 34h0M38 22h0M38 28h0M38 34h0" stroke="#6366f1" stroke-width="3" stroke-linecap="round"/></svg>'
+  },
+  "人文关怀": {
+    tagClass: "news-tag-humanity",
+    bgClass: "news-img-bg-c",
+    icon: '<svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="20" r="12" fill="white" stroke="#8b5cf6" stroke-width="1.5"/><path d="M23 32c0 0 3 5 5 5s5-5 5-5" fill="white" stroke="#8b5cf6" stroke-width="1.5"/><circle cx="24" cy="18" r="1.5" fill="#1e3a5f"/><circle cx="32" cy="18" r="1.5" fill="#1e3a5f"/><path d="M25 24c1.5 2 4.5 2 6 0" stroke="#1e3a5f" stroke-width="1" stroke-linecap="round" fill="none"/></svg>'
+  },
+  "科普知识": {
+    tagClass: "news-tag-science",
+    bgClass: "news-img-bg-a",
+    icon: '<svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="18" fill="white" stroke="#22c55e" stroke-width="2"/><path d="M22 20v12c0 4 3 7 6 7s6-3 6-7V20" stroke="#22c55e" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="28" cy="16" r="3" fill="#22c55e" opacity=".4"/><path d="M20 40h16" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/></svg>'
+  }
+};
+
 (function(){
 'use strict';
+
+/* ===== NAV ===== */
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)},{passive:true});
 const navMobile=document.getElementById('navMobile');
 const navLinks=document.getElementById('navLinks');
 navMobile.addEventListener('click',()=>{nav.classList.toggle('open');navLinks.classList.toggle('open');document.body.style.overflow=navLinks.classList.contains('open')?'hidden':''});
 navLinks.querySelectorAll('a').forEach(a=>{a.addEventListener('click',()=>{nav.classList.remove('open');navLinks.classList.remove('open');document.body.style.overflow=''})});
+
+/* ===== REVEAL (IntersectionObserver) ===== */
 const revealObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revealObs.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+function observeReveals(){document.querySelectorAll('.reveal:not(.in)').forEach(el=>revealObs.observe(el))}
+observeReveals();
+
+/* ===== HERO COUNTERS ===== */
 function animateCounters(){document.querySelectorAll('[data-count]').forEach(el=>{const target=parseInt(el.dataset.count);let current=0;const step=Math.max(1,Math.ceil(target/50));const suffix=target>=100?'+':'';const timer=setInterval(()=>{current+=step;if(current>=target){current=target;clearInterval(timer)}el.textContent=current+suffix},28)})}
 const heroObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){animateCounters();heroObs.disconnect()}})},{threshold:.4});
 const heroCard=document.querySelector('.hero-card');if(heroCard)heroObs.observe(heroCard);
+
+/* ===== PUB TABS ===== */
 const pubTabs=document.getElementById('pubTabs');const pubList=document.getElementById('pubList');
 if(pubTabs&&pubList){pubTabs.addEventListener('click',e=>{const tab=e.target.closest('.pub-tab');if(!tab)return;pubTabs.querySelectorAll('.pub-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');const filter=tab.dataset.filter;pubList.querySelectorAll('.pub-item').forEach(item=>{item.style.display=(filter==='all'||item.dataset.cat===filter)?'':'none'})})}
+
+/* ===== FAQ ACCORDION ===== */
 document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open')})});
+
+/* ===== BACK TO TOP ===== */
 const btt=document.getElementById('btt');window.addEventListener('scroll',()=>{btt.classList.toggle('show',window.scrollY>500)},{passive:true});
 btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ===== SMOOTH SCROLL ===== */
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id==='#')return;const target=document.querySelector(id);if(target){e.preventDefault();const offset=nav.offsetHeight+16;const top=target.getBoundingClientRect().top+window.scrollY-offset;window.scrollTo({top,behavior:'smooth'})}})});
+
+/* ===== NEWS COMPONENT (数据驱动) ===== */
+const newsGrid = document.getElementById('newsGrid');
+const newsTabs = document.getElementById('newsTabs');
+const newsLoadMore = document.getElementById('newsLoadMore');
+const newsLoadBtn = document.getElementById('newsLoadBtn');
+
+let newsCurrentFilter = '全部';
+let newsDisplayCount = NEWS_PAGE_SIZE;
+
+/* 生成分类筛选标签 */
+function renderNewsTabs() {
+  if (!newsTabs) return;
+  const allCats = ['全部', ...CATEGORIES];
+  newsTabs.innerHTML = allCats.map(cat => {
+    const active = cat === newsCurrentFilter ? ' active' : '';
+    return '<button class="news-tab' + active + '" data-cat="' + cat + '">' + cat + '</button>';
+  }).join('');
+  /* 绑定点击事件 */
+  newsTabs.querySelectorAll('.news-tab').forEach(btn => {
+    btn.addEventListener('click', function() {
+      newsCurrentFilter = this.dataset.cat;
+      newsDisplayCount = NEWS_PAGE_SIZE;
+      renderNewsTabs();
+      renderNewsCards();
+    });
+  });
+}
+
+/* 获取筛选后的新闻数据（featured 置顶） */
+function getFilteredNews() {
+  let data = NEWS_DATA.slice();
+  if (newsCurrentFilter !== '全部') {
+    data = data.filter(item => item.category === newsCurrentFilter);
+  }
+  /* featured 条目排在前面 */
+  data.sort((a, b) => {
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    return b.id - a.id; /* 同优先级按 id 倒序 */
+  });
+  return data;
+}
+
+/* 渲染新闻卡片 */
+function renderNewsCards() {
+  if (!newsGrid) return;
+  const filtered = getFilteredNews();
+  const toShow = filtered.slice(0, newsDisplayCount);
+
+  newsGrid.innerHTML = toShow.map((item, idx) => {
+    const config = CATEGORY_CONFIG[item.category] || CATEGORY_CONFIG['学术进展'];
+    const featuredClass = item.featured ? ' news-card-featured' : '';
+    const delayClass = 'd' + Math.min(idx + 1, 6);
+    const linkOpen = item.link ? ' style="cursor:pointer" onclick="window.open(\'' + item.link + '\',\'_blank\')"' : '';
+    const titleTag = item.link
+      ? '<h3><a href="' + item.link + '" target="_blank" rel="noopener" class="baike">' + item.title + '</a></h3>'
+      : '<h3>' + item.title + '</h3>';
+
+    return '<div class="news-card reveal ' + delayClass + featuredClass + '"' + linkOpen + '>' +
+      '<div class="news-img">' +
+        '<div class="news-img-bg ' + config.bgClass + '">' +
+          '<div class="news-img-pattern"></div>' +
+          '<div class="news-img-icon">' + config.icon + '</div>' +
+        '</div>' +
+        '<span class="news-date">' + item.date + '</span>' +
+      '</div>' +
+      '<div class="news-body">' +
+        '<span class="news-tag ' + config.tagClass + '">' + item.category + '</span>' +
+        titleTag +
+        '<p>' + item.summary + '</p>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  /* 控制“加载更多”按钮显示 */
+  if (newsLoadMore) {
+    newsLoadMore.style.display = filtered.length > newsDisplayCount ? '' : 'none';
+  }
+
+  /* 重新观察新渲染的 .reveal 元素 */
+  observeReveals();
+}
+
+/* 加载更多按钮事件 */
+if (newsLoadBtn) {
+  newsLoadBtn.addEventListener('click', function() {
+    newsDisplayCount += NEWS_PAGE_SIZE;
+    renderNewsCards();
+  });
+}
+
+/* 初始化新闻组件 */
+loadNewsData();
+
 })();
 </script>
 </body>
