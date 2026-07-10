@@ -939,21 +939,6 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
  */
 let NEWS_DATA = [];
 
-/* 从 news.json 加载资讯数据 */
-async function loadNewsData() {
-  try {
-    const resp = await fetch('news.json?t=' + Date.now());
-    if (resp.ok) {
-      NEWS_DATA = await resp.json();
-    } else {
-      console.warn('news.json 加载失败');
-    }
-  } catch (e) {
-    console.warn('news.json 加载异常');
-  }
-  renderNewsTabs();
-  renderNewsCards();
-}
 
 /* 支持的分类列表（用于生成筛选标签） */
 const CATEGORIES = ["学术进展", "课题进展", "荣誉", "学术交流", "教学创新", "人文关怀", "科普知识"];
@@ -1128,6 +1113,22 @@ if (newsLoadBtn) {
 }
 
 /* 初始化新闻组件 */
+/* 从 news.json 加载资讯数据 */
+async function loadNewsData() {
+  try {
+    const resp = await fetch('news.json?t=' + Date.now());
+    if (resp.ok) {
+      NEWS_DATA = await resp.json();
+    } else {
+      console.warn('news.json 加载失败');
+    }
+  } catch (e) {
+    console.warn('news.json 加载异常');
+  }
+  renderNewsTabs();
+  renderNewsCards();
+}
+
 loadNewsData();
 
 /* ===== WECHAT ARTICLES ===== */
