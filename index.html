@@ -1156,30 +1156,67 @@ loadNewsData();
 /* 编辑 wechat-articles.json 即可更新公众号文章列表 */
 const waGrid = document.getElementById('wechatArticlesGrid');
 const waMore = document.getElementById('wechatArticlesMore');
-async function loadWechatArticles() {
-  try {
-    const resp = await fetch('wechat-articles.json?t=' + Date.now());
-    if (!resp.ok) return;
-    const data = await resp.json();
-    if (!waGrid || !data.length) return;
-    waGrid.innerHTML = data.map((item, idx) => {
-      const delay = 'd' + Math.min(idx + 1, 6);
-      const linkAttr = item.url ? ' href="' + item.url + '" target="_blank" rel="noopener"' : '';
-      return '<a class="wechat-article-card reveal ' + delay + '"' + linkAttr + '>' +
-        '<div class="wa-title">' + item.title + '</div>' +
-        '<div class="wa-summary">' + item.summary + '</div>' +
-        '<div class="wa-meta">' +
-          '<span class="wa-tag">精选</span>' +
-          '<span>' + item.date + '</span>' +
-          (item.url ? '<span class="wa-arrow">→</span>' : '') +
-        '</div>' +
-      '</a>';
-    }).join('');
-    if (waMore && data.length > 0) waMore.style.display = '';
-    observeReveals();
-  } catch (e) {}
+const WA_DATA = [
+  {
+    "id": 1,
+    "title": "【每日科普】为什么看牙前要了解舒适化治疗？",
+    "summary": "口腔舒适化治疗的基本概念与重要性。",
+    "date": "2026-07",
+    "url": "https://mp.weixin.qq.com/s/50MtNn12hpI6Zy8IgcbSHA"
+  },
+  {
+    "id": 2,
+    "title": "笑气：让你在牙科诊室里笑出来的秘密武器",
+    "summary": "笑气镇静的原理、安全性与临床应用。",
+    "date": "2026",
+    "url": "https://mp.weixin.qq.com/s/LtFUYtH-BZozrG_pN_fL4g"
+  },
+  {
+    "id": 3,
+    "title": "儿童牙科畏惧症",
+    "summary": "儿童牙科畏惧症的表现、成因与应对策略。",
+    "date": "2026",
+    "url": "https://mp.weixin.qq.com/s/ZmZC6KeTB6TvHGztI-WhpQ"
+  },
+  {
+    "id": 4,
+    "title": ""健康中国"影像大展优秀支持媒体",
+    "summary": "赵亮医生摄影作品获"健康中国"影像大展优秀奖。",
+    "date": "2024",
+    "url": "https://mp.weixin.qq.com/s/zp2yHNIKiOYD5vvxAJ8C2Q"
+  },
+  {
+    "id": 5,
+    "title": "让牙齿"不痛不痒"——揭秘口腔舒适化治疗的前世今生与未来！",
+    "summary": "口腔舒适化治疗的发展历程与未来趋势。",
+    "date": "2025",
+    "url": "https://mp.weixin.qq.com/s/-HF5BSWBV3eGOd1d-aIHCw"
+  },
+  {
+    "id": 6,
+    "title": "口腔舒适化：患者意识的重要性",
+    "summary": "为什么大众对口腔舒适化的认知如此重要。",
+    "date": "2025",
+    "url": "https://mp.weixin.qq.com/s/TRlZD61k18MVYvF8mhusyQ"
+  }
+];
+if (waGrid && WA_DATA.length) {
+  waGrid.innerHTML = WA_DATA.map((item, idx) => {
+    const delay = 'd' + Math.min(idx + 1, 6);
+    const linkAttr = item.url ? ' href="' + item.url + '" target="_blank" rel="noopener"' : '';
+    return '<a class="wechat-article-card reveal ' + delay + '"' + linkAttr + '>' +
+      '<div class="wa-title">' + item.title + '</div>' +
+      '<div class="wa-summary">' + item.summary + '</div>' +
+      '<div class="wa-meta">' +
+        '<span class="wa-tag">精选</span>' +
+        '<span>' + item.date + '</span>' +
+        (item.url ? '<span class="wa-arrow">→</span>' : '') +
+      '</div>' +
+    '</a>';
+  }).join('');
+  if (waMore) waMore.style.display = '';
+  observeReveals();
 }
-loadWechatArticles();
 
 /* ===== PHOTO CAROUSEL ===== */
 (function(){
