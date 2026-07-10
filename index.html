@@ -284,6 +284,21 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .wechat-qr-wrap p{font-size:.78rem;color:var(--c-text-3);font-weight:500}
 .wechat-qr-label{font-size:.85rem;font-weight:700;color:var(--c-navy);margin-bottom:.5rem}
 
+/* WECHAT ARTICLES */
+.wechat-articles{background:var(--c-bg-warm);padding:clamp(3rem,6vw,5rem) 0}
+.wechat-articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-top:1.5rem}
+.wechat-article-card{background:var(--c-surface);border:1px solid var(--c-border-l);border-radius:var(--r-md);padding:1.25rem;display:flex;flex-direction:column;gap:.6rem;transition:all .3s var(--ease);cursor:pointer;text-decoration:none;color:inherit}
+.wechat-article-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:oklch(50% .15 250 / .2)}
+.wechat-article-card .wa-title{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--c-navy);line-height:1.5}
+.wechat-article-card .wa-summary{font-size:.82rem;color:var(--c-text-2);line-height:1.65;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.wechat-article-card .wa-meta{display:flex;align-items:center;gap:.5rem;font-size:.72rem;color:var(--c-text-3);margin-top:auto}
+.wechat-article-card .wa-tag{background:oklch(52% .12 145 / .08);color:oklch(38% .08 145);padding:.15rem .5rem;border-radius:4px;font-size:.68rem;font-weight:600}
+.wechat-article-card .wa-arrow{margin-left:auto;color:var(--c-primary);font-size:.85rem;transition:transform .2s}
+.wechat-article-card:hover .wa-arrow{transform:translateX(3px)}
+.wechat-articles-more{text-align:center;margin-top:1.5rem}
+.wechat-articles-more a{display:inline-flex;align-items:center;gap:.5rem;color:var(--c-primary);font-weight:600;font-size:.88rem;transition:all .2s}
+.wechat-articles-more a:hover{color:var(--c-primary-d);gap:.75rem}
+
 /* CTA */
 .cta{background:oklch(96% .006 250);text-align:center;padding:clamp(4rem,8vw,7rem) 2rem;position:relative}
 .cta .sec-title{font-size:clamp(1.8rem,3.5vw,2.6rem)}
@@ -665,9 +680,9 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
       <button class="pub-tab" data-filter="patent">专利</button>
     </div>
     <div class="pub-list reveal d3" id="pubList">
-      <div class="pub-item pub-highlight" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>咽反射敏感患者<a href="https://baike.baidu.com/item/%E4%B8%80%E6%B0%A7%E5%8C%96%E4%BA%8C%E6%B0%AE" target="_blank" rel="noopener" class="baike">笑气-氧气吸入镇静</a>下口腔治疗1例报告</h4><p class="pub-meta">赵亮，徐稳安等 · 《中国实用口腔科杂志》录用</p></div>
-      <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>全程舒适化管理策略在一例重度<a href="https://baike.baidu.com/item/%E7%89%99%E5%8C%BB%E6%81%90%E6%83%A7%E7%97%87/7194208" target="_blank" rel="noopener" class="baike">牙科畏惧症</a>患者治疗中的应用</h4><p class="pub-meta">赵亮，徐稳安等 · 《深圳中西医结合杂志》录用</p></div>
-      <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>一例<a href="https://baike.baidu.com/item/%E5%8F%8C%E7%9B%B8%E9%9A%9C%E7%A2%8D" target="_blank" rel="noopener" class="baike">双相情感障碍</a>患者阻生牙拔除术<a href="https://baike.baidu.com/item/%E5%85%A8%E8%BA%AB%E9%BA%BB%E9%86%89" target="_blank" rel="noopener" class="baike">全身麻醉</a>管理及文献综述</h4><p class="pub-meta">赵亮，华泽权等 · 《口腔医学杂志》录用</p></div>
+      <div class="pub-item pub-highlight" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>咽反射敏感患者<a href="https://baike.baidu.com/item/%E4%B8%80%E6%B0%A7%E5%8C%96%E4%BA%8C%E6%B0%AE" target="_blank" rel="noopener" class="baike">笑气-氧气吸入镇静</a>下口腔治疗1例报告</h4><p class="pub-meta">赵亮，徐稳安等 · 《中国实用口腔科杂志》2026, (3): 381-384</p></div>
+      <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>全程舒适化管理策略在一例重度<a href="https://baike.baidu.com/item/%E7%89%99%E5%8C%BB%E6%81%90%E6%83%A7%E7%97%87/7194208" target="_blank" rel="noopener" class="baike">牙科畏惧症</a>患者治疗中的应用</h4><p class="pub-meta">赵亮，徐稳安等 · 《深圳中西医结合杂志》2026, 36(6): 114-117</p></div>
+      <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>一例<a href="https://baike.baidu.com/item/%E5%8F%8C%E7%9B%B8%E9%9A%9C%E7%A2%8D" target="_blank" rel="noopener" class="baike">双相情感障碍</a>患者阻生牙拔除术<a href="https://baike.baidu.com/item/%E5%85%A8%E8%BA%AB%E9%BA%BB%E9%86%89" target="_blank" rel="noopener" class="baike">全身麻醉</a>管理及文献综述</h4><p class="pub-meta">赵亮，华泽权等 · 《口腔医学杂志》2026, 46(6): 455-459</p></div>
       <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>口腔颌面外科非困难气道经鼻气管插管的研究进展</h4><p class="pub-meta">冯振鑫，赵亮等 · 《临床麻醉学杂志》2025, 41(10):1114-1118</p></div>
       <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4>儿童口腔舒适化治疗方法的研究进展与应用</h4><p class="pub-meta">赵亮，徐稳安等 · 《中国当代医药》2025, 32(10):194-198</p></div>
       <div class="pub-item" data-cat="journal"><span class="pub-type pub-type-j">期刊论文</span><h4><a href="https://baike.baidu.com/item/%E5%A4%A9%E4%BD%BF%E7%BB%BC%E5%90%88%E5%BE%81" target="_blank" rel="noopener" class="baike">天使综合征</a>儿童<a href="https://baike.baidu.com/item/%E5%85%A8%E8%BA%AB%E9%BA%BB%E9%86%89" target="_blank" rel="noopener" class="baike">全身麻醉</a>下口腔治疗1例报告</h4><p class="pub-meta">赵亮，徐稳安等 · 《中国实用口腔科杂志》2024, 17(5):636-640</p></div>
@@ -755,6 +770,21 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
   </div>
 </section>
 
+<!-- WECHAT ARTICLES -->
+<section class="wechat-articles" id="wechatArticles">
+  <div class="container">
+    <div class="sec-hdr reveal">
+      <div class="sec-label">WeChat Articles</div>
+      <h2 class="sec-title">公众号精选文章</h2>
+      <p class="sec-desc">关注赵亮医生微信公众号，获取更多口腔舒适化科普与诊疗故事。</p>
+    </div>
+    <div class="wechat-articles-grid" id="wechatArticlesGrid"></div>
+    <div class="wechat-articles-more reveal" id="wechatArticlesMore" style="display:none">
+      <a href="#wechat">关注公众号查看更多 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta" id="contact">
   <div class="container">
@@ -776,7 +806,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
     <div class="footer-brand"><h3>口腔舒适化中心</h3><p>南方医科大学深圳口腔医院（坪山）麻醉科，以精准麻醉技术为核心，为每一位追求舒适体验的您提供安全、轻松、无痛的口腔诊疗服务。</p></div>
     <div class="footer-col"><h4>舒适化方案</h4><ul><li><a href="#methods">笑气镇静</a></li><li><a href="#methods">全身麻醉</a></li><li><a href="#methods">静脉镇静</a></li><li><a href="#methods">舒适化局麻</a></li></ul></div>
     <div class="footer-col"><h4>了解更多</h4><ul><li><a href="#about">关于医生</a></li><li><a href="#research">科研成果</a></li><li><a href="#publications">论文专利</a></li><li><a href="#news">最新资讯</a></li></ul></div>
-    <div class="footer-col"><h4>快速链接</h4><ul><li><a href="#faq">常见问题</a></li><li><a href="#wechat">关注公众号</a></li><li><a href="https://www.smuszsh.com/" target="_blank" rel="noopener">医院官网</a></li><li><a href="#hero">回到顶部</a></li></ul></div>
+    <div class="footer-col"><h4>快速链接</h4><ul><li><a href="#faq">常见问题</a></li><li><a href="#wechat">关注公众号</a></li><li><a href="#wechatArticles">精选文章</a></li><li><a href="https://www.smuszsh.com/" target="_blank" rel="noopener">医院官网</a></li><li><a href="#hero">回到顶部</a></li></ul></div>
   </div>
   <div class="footer-bottom"><span>© 2025 口腔舒适化中心 · 赵亮医生</span><span>南方医科大学深圳口腔医院（坪山）</span></div>
 </footer>
@@ -995,6 +1025,35 @@ if (newsLoadBtn) {
 
 /* 初始化新闻组件 */
 loadNewsData();
+
+/* ===== WECHAT ARTICLES ===== */
+/* 编辑 wechat-articles.json 即可更新公众号文章列表 */
+const waGrid = document.getElementById('wechatArticlesGrid');
+const waMore = document.getElementById('wechatArticlesMore');
+async function loadWechatArticles() {
+  try {
+    const resp = await fetch('wechat-articles.json?t=' + Date.now());
+    if (!resp.ok) return;
+    const data = await resp.json();
+    if (!waGrid || !data.length) return;
+    waGrid.innerHTML = data.map((item, idx) => {
+      const delay = 'd' + Math.min(idx + 1, 6);
+      const linkAttr = item.url ? ' href="' + item.url + '" target="_blank" rel="noopener"' : '';
+      return '<a class="wechat-article-card reveal ' + delay + '"' + linkAttr + '>' +
+        '<div class="wa-title">' + item.title + '</div>' +
+        '<div class="wa-summary">' + item.summary + '</div>' +
+        '<div class="wa-meta">' +
+          '<span class="wa-tag">精选</span>' +
+          '<span>' + item.date + '</span>' +
+          (item.url ? '<span class="wa-arrow">→</span>' : '') +
+        '</div>' +
+      '</a>';
+    }).join('');
+    if (waMore && data.length > 0) waMore.style.display = '';
+    observeReveals();
+  } catch (e) {}
+}
+loadWechatArticles();
 
 })();
 </script>
