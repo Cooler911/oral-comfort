@@ -369,6 +369,40 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .news-load-btn svg{width:16px;height:16px;transition:transform .3s}
 .news-load-btn:hover svg{transform:translateY(2px)}
 
+/* News add button */
+.news-add-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border-radius:100px;font-size:.82rem;font-weight:600;cursor:pointer;border:1.5px dashed var(--c-border);background:transparent;color:var(--c-text-3);transition:all .25s var(--ease)}
+.news-add-btn:hover{border-color:var(--c-primary);color:var(--c-primary-d);background:oklch(50% .15 250 / .04)}
+.news-add-btn svg{width:16px;height:16px}
+
+/* News editor modal */
+.news-modal-overlay{position:fixed;inset:0;background:oklch(12% .03 250 / .5);backdrop-filter:blur(6px);z-index:2000;display:none;align-items:center;justify-content:center;padding:1rem}
+.news-modal-overlay.open{display:flex}
+.news-modal{background:var(--c-surface);border-radius:var(--r-lg);width:100%;max-width:540px;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px oklch(12% .03 250 / .25);position:relative}
+.news-modal::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c-primary),var(--c-accent),var(--c-primary-l));border-radius:var(--r-lg) var(--r-lg) 0 0}
+.news-modal-hdr{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid var(--c-border-l)}
+.news-modal-hdr h3{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--c-navy)}
+.news-modal-close{background:none;border:none;cursor:pointer;padding:4px;color:var(--c-text-3);transition:color .2s}
+.news-modal-close:hover{color:var(--c-navy)}
+.news-modal-body{padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+.news-field label{display:block;font-size:.82rem;font-weight:600;color:var(--c-text);margin-bottom:.35rem}
+.news-field input,.news-field textarea,.news-field select{width:100%;padding:.65rem .85rem;border:1.5px solid var(--c-border);border-radius:var(--r-sm);font-family:inherit;font-size:.88rem;color:var(--c-text);background:var(--c-bg);transition:border-color .2s;outline:none}
+.news-field input:focus,.news-field textarea:focus,.news-field select:focus{border-color:var(--c-primary)}
+.news-field textarea{resize:vertical;min-height:80px}
+.news-field-check{display:flex;align-items:center;gap:.5rem}
+.news-field-check input[type=checkbox]{width:16px;height:16px;accent-color:var(--c-primary)}
+.news-field-check label{margin:0;font-size:.82rem;color:var(--c-text-2)}
+.news-modal-footer{display:flex;gap:.75rem;justify-content:flex-end;padding:1rem 1.5rem;border-top:1px solid var(--c-border-l)}
+.news-modal-footer button{padding:.6rem 1.5rem;border-radius:100px;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .25s}
+.news-modal-cancel{border:1.5px solid var(--c-border);background:transparent;color:var(--c-text-2)}
+.news-modal-cancel:hover{border-color:var(--c-primary);color:var(--c-primary-d)}
+.news-modal-save{border:none;background:var(--c-primary);color:oklch(98% .005 250)}
+.news-modal-save:hover{background:var(--c-primary-d)}
+.news-modal-tip{font-size:.72rem;color:var(--c-text-3);line-height:1.5;padding:0 1.5rem .5rem}
+.news-modal-success{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--c-surface);padding:2rem 3rem;border-radius:var(--r-lg);box-shadow:var(--shadow-xl);z-index:2001;text-align:center;display:none}
+.news-modal-success.show{display:block}
+.news-modal-success svg{width:48px;height:48px;color:var(--c-success);margin-bottom:.75rem}
+.news-modal-success p{font-weight:600;color:var(--c-navy)}
+
 /* News category tag colors */
 .news-tag-academic{background:oklch(50% .15 250 / .07);color:oklch(38% .12 250)}
 .news-tag-research{background:oklch(58% .10 220 / .08);color:oklch(38% .10 220)}
@@ -723,6 +757,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
     <!-- 新闻卡片网格（由 JS 从 NEWS_DATA 渲染） -->
     <div class="news-grid" id="newsGrid"></div>
     <!-- 加载更多按钮 -->
+    <div style="text-align:center;margin-bottom:1.5rem"><button class="news-add-btn" id="newsAddBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>添加新资讯</button></div>
     <div class="news-load-more" id="newsLoadMore" style="display:none">
       <button class="news-load-btn" id="newsLoadBtn">加载更多 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
     </div>
@@ -990,12 +1025,13 @@ function renderNewsCards() {
       ? '<h3><a href="' + item.link + '" target="_blank" rel="noopener" class="baike">' + item.title + '</a></h3>'
       : '<h3>' + item.title + '</h3>';
 
+    const imgHtml = item.image
+      ? '<img src="' + item.image + '" alt="' + item.title + '" style="width:100%;height:100%;object-fit:cover" loading="lazy">'
+      : '<div class="news-img-pattern"></div><div class="news-img-icon">' + config.icon + '</div>';
+
     return '<div class="news-card reveal ' + delayClass + featuredClass + '"' + linkOpen + '>' +
       '<div class="news-img">' +
-        '<div class="news-img-bg ' + config.bgClass + '">' +
-          '<div class="news-img-pattern"></div>' +
-          '<div class="news-img-icon">' + config.icon + '</div>' +
-        '</div>' +
+        '<div class="news-img-bg ' + config.bgClass + '">' + imgHtml + '</div>' +
         '<span class="news-date">' + item.date + '</span>' +
       '</div>' +
       '<div class="news-body">' +
@@ -1055,7 +1091,150 @@ async function loadWechatArticles() {
 }
 loadWechatArticles();
 
+/* ===== NEWS EDITOR ===== */
+const newsAddBtn = document.getElementById('newsAddBtn');
+const newsModal = document.getElementById('newsModal');
+const newsModalClose = document.getElementById('newsModalClose');
+const newsModalCancel = document.getElementById('newsModalCancel');
+const newsModalSave = document.getElementById('newsModalSave');
+const newsModalSuccess = document.getElementById('newsModalSuccess');
+const newsForm = document.getElementById('newsForm');
+const GH_TOKEN_KEY = 'gh_token';
+
+function openNewsModal(){
+  if(newsModal) newsModal.classList.add('open');
+}
+function closeNewsModal(){
+  if(newsModal) newsModal.classList.remove('open');
+  if(newsForm) newsForm.reset();
+}
+if(newsAddBtn) newsAddBtn.addEventListener('click', openNewsModal);
+if(newsModalClose) newsModalClose.addEventListener('click', closeNewsModal);
+if(newsModalCancel) newsModalCancel.addEventListener('click', closeNewsModal);
+if(newsModal) newsModal.addEventListener('click', function(e){if(e.target===newsModal) closeNewsModal()});
+
+async function saveNewsItem(){
+  const title = document.getElementById('nfTitle').value.trim();
+  const date = document.getElementById('nfDate').value.trim();
+  const category = document.getElementById('nfCategory').value;
+  const summary = document.getElementById('nfSummary').value.trim();
+  const link = document.getElementById('nfLink').value.trim();
+  const imageUrl = document.getElementById('nfImage').value.trim();
+  const featured = document.getElementById('nfFeatured').checked;
+  const token = document.getElementById('nfToken').value.trim();
+
+  if(!title || !date || !summary){alert('请填写标题、日期和摘要');return;}
+  if(!token){alert('请填写 GitHub Token');return;}
+
+  newsModalSave.textContent = '保存中...';
+  newsModalSave.disabled = true;
+
+  try {
+    /* 1. 获取当前 news.json */
+    const getResp = await fetch('https://api.github.com/repos/Cooler911/oral-comfort/contents/news.json', {
+      headers: {'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github.v3+json'}
+    });
+    if(!getResp.ok) throw new Error('获取文件失败，请检查 Token');
+    const fileData = await getResp.json();
+    const currentContent = decodeURIComponent(escape(atob(fileData.content)));
+    let arr = JSON.parse(currentContent);
+
+    /* 2. 添加新条目 */
+    const newId = arr.length ? Math.max(...arr.map(n=>n.id)) + 1 : 1;
+    const newItem = {id:newId, date:date, category:category, title:title, summary:summary, link:link, image:imageUrl, featured:featured};
+    arr.unshift(newItem);
+
+    /* 3. 提交更新 */
+    const newContent = btoa(unescape(encodeURIComponent(JSON.stringify(arr, null, 2))));
+    const putResp = await fetch('https://api.github.com/repos/Cooler911/oral-comfort/contents/news.json', {
+      method: 'PUT',
+      headers: {'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json'},
+      body: JSON.stringify({message: 'news: ' + title, content: newContent, sha: fileData.sha})
+    });
+    if(!putResp.ok) throw new Error('提交失败');
+
+    /* 4. 成功提示 */
+    closeNewsModal();
+    if(newsModalSuccess) {newsModalSuccess.classList.add('show'); setTimeout(()=>{newsModalSuccess.classList.remove('show'); location.reload()}, 2000);}
+    else {alert('添加成功！页面将刷新'); location.reload();}
+
+  } catch(e) {
+    alert('操作失败：' + e.message);
+  } finally {
+    newsModalSave.textContent = '保存并发布';
+    newsModalSave.disabled = false;
+  }
+}
+if(newsModalSave) newsModalSave.addEventListener('click', saveNewsItem);
+
 })();
 </script>
+
+<!-- NEWS EDITOR MODAL -->
+<div class="news-modal-overlay" id="newsModal">
+  <div class="news-modal">
+    <div class="news-modal-hdr">
+      <h3>添加新资讯</h3>
+      <button class="news-modal-close" id="newsModalClose"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <form id="newsForm" onsubmit="return false">
+    <div class="news-modal-body">
+      <div class="news-field">
+        <label>标题 *</label>
+        <input type="text" id="nfTitle" placeholder="资讯标题" required>
+      </div>
+      <div class="news-field" style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+        <div>
+          <label>日期 *</label>
+          <input type="text" id="nfDate" placeholder="2025-07" required>
+        </div>
+        <div>
+          <label>分类 *</label>
+          <select id="nfCategory">
+            <option value="学术进展">学术进展</option>
+            <option value="课题进展">课题进展</option>
+            <option value="荣誉">荣誉</option>
+            <option value="学术交流">学术交流</option>
+            <option value="教学创新">教学创新</option>
+            <option value="人文关怀">人文关怀</option>
+            <option value="科普知识">科普知识</option>
+          </select>
+        </div>
+      </div>
+      <div class="news-field">
+        <label>摘要 *</label>
+        <textarea id="nfSummary" placeholder="资讯摘要内容" required></textarea>
+      </div>
+      <div class="news-field">
+        <label>链接（可选）</label>
+        <input type="url" id="nfLink" placeholder="https://... 点击卡片可跳转的链接">
+      </div>
+      <div class="news-field">
+        <label>图片（可选）</label>
+        <input type="url" id="nfImage" placeholder="https://... 资讯配图URL">
+      </div>
+      <div class="news-field-check">
+        <input type="checkbox" id="nfFeatured">
+        <label for="nfFeatured">置顶高亮显示</label>
+      </div>
+    </div>
+    <p class="news-modal-tip">提示：需要填写 GitHub Token 才能保存。Token 仅用于提交更新，不会被存储。</p>
+    <div class="news-modal-body" style="padding-top:0">
+      <div class="news-field">
+        <label>GitHub Token</label>
+        <input type="password" id="nfToken" placeholder="ghp_...">
+      </div>
+    </div>
+    <div class="news-modal-footer">
+      <button type="button" class="news-modal-cancel" id="newsModalCancel">取消</button>
+      <button type="button" class="news-modal-save" id="newsModalSave">保存并发布</button>
+    </div>
+    </form>
+  </div>
+</div>
+<div class="news-modal-success" id="newsModalSuccess">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+  <p>发布成功！页面即将刷新...</p>
+</div>
 </body>
 </html>
